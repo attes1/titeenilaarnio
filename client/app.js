@@ -5,7 +5,8 @@
     'ngTouch',
     'ui.router', 
 
-    'titeenilaarnio.navigation' ])
+    'titeenilaarnio.navigation',
+    'titeenilaarnio.main' ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('titeenilaarnio', {

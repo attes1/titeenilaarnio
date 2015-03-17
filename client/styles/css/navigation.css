@@ -1,5 +1,5 @@
 #wrapper .side-navigation {
-  background-color: #000000;
+  background-color: #191919;
   margin-left: -200px;
   left: 0px;
   width: 250px;
@@ -20,7 +20,21 @@
   cursor: pointer;
 }
 #wrapper .side-navigation .side-navi-link {
-  display: none;
+  cursor: pointer;
+  list-style: none;
+  padding-left: 15px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+#wrapper .side-navigation .side-navi-link:hover {
+  color: #ff8c00;
+}
+#wrapper .side-navigation .side-navi-link.active {
+  color: #d90000;
+}
+#wrapper .side-navigation .side-navi-link .side-navi-icon {
+  width: 50px;
+  text-align: center;
 }
 #wrapper .main {
   padding-left: 50px;
@@ -28,9 +42,6 @@
   width: 100%;
   height: auto;
   transition: all .4s ease 0s;
-}
-#wrapper.side-navi-open .side-navi-link {
-  display: block;
 }
 #wrapper.side-navi-open .side-navigation {
   left: 200px;

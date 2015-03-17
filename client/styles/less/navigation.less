@@ -1,4 +1,5 @@
 @import "mixins.less";
+@import "variables.less";
 
 @side-navi-width-open:      250px;
 @side-navi-width-closed:    50px;
@@ -9,7 +10,7 @@
 
 #wrapper {
   .side-navigation {
-    background-color: #000000;
+    background-color: @navigation-background;
 
     margin-left: -(@side-navi-width-open - @side-navi-width-closed);
     left: 0px;
@@ -29,7 +30,26 @@
     }
 
     .side-navi-link {
-      display: none;
+      .pointer();
+      list-style: none;
+
+      padding-left: 15px;
+
+      color: @navigation-foreground;
+      text-transform: uppercase;
+
+      &:hover {
+        color: @navigation-hover;
+      }
+
+      &.active {
+        color: @navigation-active;
+      }
+
+      .side-navi-icon {
+        width: @side-navi-width-closed;
+        text-align: center;
+      }
     }
   }
 
@@ -44,10 +64,6 @@
   }
 
   &.side-navi-open {
-    .side-navi-link {
-      display: block;
-    }
-
     .side-navigation {
       left: @side-navi-width-open - @side-navi-width-closed;
     }
