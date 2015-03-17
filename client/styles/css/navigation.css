@@ -11,6 +11,7 @@
 #wrapper .side-navigation .side-navi-toggle {
   height: 50px;
   padding-top: 10px;
+  list-style: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -39,7 +40,7 @@
 #wrapper .main {
   padding-left: 50px;
   margin-left: 0;
-  width: 100%;
+  max-width: 100%;
   height: auto;
   transition: all .4s ease 0s;
 }
