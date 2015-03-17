@@ -22,6 +22,14 @@
         <section class="content">
           <main ui-view="main"></main>
         </section>
+
+        <div class="footer" ng-controller="SponsorController">
+          <div ng-repeat="logo in logos | filter:showLogo" class="fx-zoom-up">
+            <p>
+              <img ng-src="{{ showLogo.url }}" class="logo" />
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
