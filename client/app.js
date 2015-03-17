@@ -19,7 +19,7 @@
       abstract: true,
     })
 
-    $urlRouterProvider.otherwise('/info');
+    $urlRouterProvider.otherwise('/main');
   });
 }(angular));
 
