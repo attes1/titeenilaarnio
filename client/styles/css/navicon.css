@@ -1,0 +1,70 @@
+.lines {
+  display: inline-block;
+  width: 2rem;
+  height: 0.28571429rem;
+  background: #dddddd;
+  border-radius: 0.14285714rem;
+  transition: 0.4s;
+  position: relative;
+}
+.lines:before,
+.lines:after {
+  display: inline-block;
+  width: 2rem;
+  height: 0.28571429rem;
+  background: #dddddd;
+  border-radius: 0.14285714rem;
+  transition: 0.4s;
+  position: absolute;
+  left: 0;
+  content: '';
+  transform-origin: 0.14285714rem center;
+  -webkit-transform-origin: 0.14285714rem center;
+}
+.lines:before {
+  top: 0.5rem;
+}
+.lines:after {
+  top: -0.5rem;
+}
+.lines-button {
+  margin: 0 1rem;
+  border: none;
+  background: none;
+  display: inline-block;
+  padding: 1rem 0.5rem;
+  transition: 0.4s;
+  cursor: pointer;
+  border-radius: 0.28571429rem;
+}
+.lines-button span {
+  display: block;
+}
+.lines-button:focus {
+  outline: none;
+}
+.lines-button:hover {
+  opacity: 1;
+}
+.lines-button:active {
+  transition: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.lines-button.x.closed .lines {
+  background: transparent;
+}
+.lines-button.x.closed .lines:before,
+.lines-button.x.closed .lines:after {
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  top: 0;
+  width: 2rem;
+}
+.lines-button.x.closed .lines:before {
+  transform: rotate3d(0, 0, 1, 45deg);
+  -webkit-transform: rotate3d(0, 0, 1, 45deg);
+}
+.lines-button.x.closed .lines:after {
+  transform: rotate3d(0, 0, 1, -45deg);
+  -webkit-transform: rotate3d(0, 0, 1, -45deg);
+}

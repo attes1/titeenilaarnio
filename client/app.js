@@ -5,16 +5,15 @@
     'ngTouch',
     'ui.router', 
 
-    'titeenilaarnio.main' ])
+    'titeenilaarnio.navigation' ])
   .config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/titeenilaarnio/main');
-
     $stateProvider
-      .state('titeenilaarnio', {
-        url: '/titeenilaarnio',
-        abstract: true,
-        template: '<ui-view></ui-view>'
-      });
+    .state('titeenilaarnio', {
+      url: '/',
+      abstract: true,
+    })
+
+    $urlRouterProvider.otherwise('/info');
   });
 }(angular));
 

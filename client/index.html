@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html ng-app="titeenilaarnio">
-<head>
-  <meta charset='utf8'>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width">
-  <title>titeenilaarnio</title>
-  <link rel="stylesheet" type="text/css" href="lib/skeleton/css/normalize.css">
-  <link rel="stylesheet" type="text/css" href="lib/skeleton/css/skeleton.css">
-  <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="styles/css/app.css"/>
-</head>
-  <body>
+  <head>
+    <meta charset='utf8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>titeenilaarnio</title>
+    <link rel="stylesheet" type="text/css" href="lib/skeleton/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="lib/skeleton/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/css/app.css"/>
+    <link rel="stylesheet" href="styles/css/navicon.css"/>
+    <link rel="stylesheet" href="styles/css/navigation.css"/>
+  </head>
 
-    <div ui-view></div>
+  <body>
+    <div id="wrapper" ng-controller="LayoutController" ng-class="{ 'side-navi-open' : !navigationClosed }">
+        <div class="side-navigation" ng-include="'navigation/navigation.html'" role="navigation"></div>
+        
+        <div class="main">
+            <section class="content">
+                <main ui-view></main>
+            </section>
+        </div>
+    </div>
 
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
@@ -20,6 +30,6 @@
     <script src="lib/ngFx/dist/ngFxBundle.js"></script>
     <script src="app.js"></script>
     <script src="common/directives.js"></script>
-    <script src="main/main.js"></script>
+    <script src="navigation/navigation.js"></script>
   </body>
 </html>
