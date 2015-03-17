@@ -1,17 +1,19 @@
 @import "mixins.less";
 
-@sidenav-width-open:      250px;
-@sidenav-width-closed:    50px;
-@sidenav-link-height:     40px;
-@sidenav-toggle-height:   50px;
+@side-navi-width-open:      250px;
+@side-navi-width-closed:    50px;
+@side-navi-link-height:     40px;
+@side-navi-toggle-height:   50px;
 
-@slide-transition:        all .4s ease 0s;
+@slide-transition:          all .4s ease 0s;
 
 #wrapper {
   .side-navigation {
-    margin-left: -(@sidenav-width-open - @sidenav-width-closed);
+    background-color: #000000;
+
+    margin-left: -(@side-navi-width-open - @side-navi-width-closed);
     left: 0px;
-    width: @sidenav-width-open;
+    width: @side-navi-width-open;
     position: fixed;
     height: 100%;
     z-index: 999;
@@ -19,12 +21,11 @@
     transition: @slide-transition;
 
     .side-navi-toggle {
-      background-color: #000000;
-
-      height: @sidenav-toggle-height;
+      height: @side-navi-toggle-height;
       padding-top: 10px;
 
       .no-select();
+      .pointer();
     }
 
     .side-navi-link {
@@ -33,7 +34,7 @@
   }
 
   .main {
-    padding-left: @sidenav-width-closed;
+    padding-left: @side-navi-width-closed;
 
     margin-left: 0;
     width: 100%;
@@ -48,12 +49,12 @@
     }
 
     .side-navigation {
-      left: @sidenav-width-open - @sidenav-width-closed;
+      left: @side-navi-width-open - @side-navi-width-closed;
     }
 
     @media only screen and (min-width: 550px) {
       .main {
-        padding-left: @sidenav-width-open;
+        padding-left: @side-navi-width-open;
       }
     }
   }

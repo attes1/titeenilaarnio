@@ -15,13 +15,13 @@
 
   <body>
     <div id="wrapper" ng-controller="LayoutController" ng-class="{ 'side-navi-open' : !navigationClosed }">
-        <div class="side-navigation" ng-include="'navigation/navigation.html'" role="navigation"></div>
-        
-        <div class="main">
-            <section class="content">
-                <main ui-view></main>
-            </section>
-        </div>
+      <div class="side-navigation" ng-include="'navigation/navigation.html'" role="navigation"></div>
+      
+      <div class="main">
+        <section class="content">
+          <main ui-view></main>
+        </section>
+      </div>
     </div>
 
     <script src="lib/angular/angular.js"></script>
