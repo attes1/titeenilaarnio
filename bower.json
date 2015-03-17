@@ -1,0 +1,13 @@
+{
+  "name": "titeenilaarnio",
+  "version": "",
+  "dependencies": {
+    "angular": "*" ,
+    "angular-touch": "*",
+    "ngFx": "*",
+    "angular-ui-router": "*",
+    "skeleton": "https://github.com/dhg/Skeleton.git",
+    "font-awesome": "components-font-awesome#v4.3.0"
+  }
+}
+
