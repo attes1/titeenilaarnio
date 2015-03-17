@@ -2,12 +2,12 @@
   "name": "titeenilaarnio",
   "version": "",
   "dependencies": {
-    "angular": "*" ,
+    "angular": "*",
     "angular-touch": "*",
     "ngFx": "*",
     "angular-ui-router": "*",
     "skeleton": "https://github.com/dhg/Skeleton.git",
-    "font-awesome": "components-font-awesome#v4.3.0"
+    "font-awesome": "components-font-awesome#v4.3.0",
+    "ngCordova": "~0.1.12-alpha"
   }
 }
-
