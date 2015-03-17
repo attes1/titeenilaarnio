@@ -1,3 +1,72 @@
 <div class="view-header">
-    <h3>Yhteystiedot</h3>
+  <h3>Yhteystiedot</h3>
 </div>
+
+<strong>Majoituspuhelin</strong> <a href="tel:<killan/majoituksen puhelin>"><killan/majoituksen puhelin></a>
+
+<p>
+  Toimikunnalle voi laittaa sähköpostia osoitteeseen titeenitk@list.tietoteekkarikilta.fi
+</p>
+
+<hr />
+
+<div class="row">
+  <div class="six columns">
+    <strong>Tampereen taksi</strong>
+  </div>
+  <div class="six columns">
+    <a href="tel:01004131">01004131</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="six columns">
+    <strong>Myrkytystietokeskus</strong>
+  </div>
+  <div class="six columns">
+    <a href="tel:09471977">09471977</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="six columns">
+    <strong>Yleinen hätänumero</strong>
+  </div>
+  <div class="six columns">
+    <a href="tel:112">112</a>
+  </div>
+</div>
+
+<br/>
+
+<p>
+  Hätätilanteessa ole yhteydessä lähimpään järjestäjän/selväpäisen.
+  Anna paikallisen hoitaa puhelut ja viranomaisyhteistyö.
+</p>
+
+<hr />
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Vastuualue</th>
+      <th>Nimi</th>
+      <th>Nimi</th>
+      <th>Puhelin</th>
+    </tr>
+  </thead>
+  <tr ng-repeat="organizer in organizers">
+    <td>
+      {{ organizer.title }}
+    </td>
+    <td>
+      {{ organizer.nick }}
+    </td>
+    <td>
+      {{ organizer.realName }}
+    </td>
+    <td>
+      <a href="{{ 'tel:' + organizer.phone }}">{{ organizer.phone }}</a>
+    </td>
+  </tr>
+</table>
