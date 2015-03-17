@@ -8,7 +8,7 @@
         $scope.navigationClosed = !$scope.navigationClosed;
     };
 
-    var mobileView = 990;
+    var mobileView = 750;
 
     $scope.getWidth = function () {
         return window.innerWidth;
@@ -16,7 +16,7 @@
 
     $scope.$watch($scope.getWidth, function(newValue, oldValue) {
         if (newValue <= mobileView) {
-            $scope.navigationClosed = false;
+            $scope.navigationClosed = true;
         }
     });
 
