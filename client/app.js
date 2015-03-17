@@ -6,7 +6,8 @@
     'ui.router', 
 
     'titeenilaarnio.navigation',
-    'titeenilaarnio.main' ])
+    'titeenilaarnio.main',
+    'titeenilaarnio.scoreboard' ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('titeenilaarnio', {

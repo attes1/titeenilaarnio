@@ -20,3 +20,50 @@ body {
 .content {
   padding: 1.5rem;
 }
+
+@circular-logo-size:    100px;
+@circular-logo-small:   60px;
+
+.circular-logo {
+  width: @circular-logo-size;
+  height: @circular-logo-size;
+
+  border-radius: @circular-logo-size / 2;
+  -webkit-border-radius: @circular-logo-size / 2;
+  -moz-border-radius: @circular-logo-size / 2;
+  box-shadow: 0 0 2px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, .8);
+
+  &.tite {
+    background: #FFFFFF url("/assets/tite.png") no-repeat;
+  }
+
+  &.cluster {
+    background: #FFFFFF url("/assets/cluster.png") no-repeat; 
+  }
+
+  &.tik {
+    background: #FFFFFF url("/assets/tik.png") no-repeat; 
+  }
+
+  &.otit {
+    background: #FFFFFF url("/assets/otit.png") no-repeat; 
+  }
+
+  &.digit {
+    background: #FFFFFF url("/assets/digit.png") no-repeat; 
+  }
+
+  background-size: @circular-logo-size @circular-logo-size;
+
+  &.small {
+    width: @circular-logo-small;
+    height: @circular-logo-small;
+
+    border-radius: @circular-logo-small / 2;
+    -webkit-border-radius: @circular-logo-small / 2;
+    -moz-border-radius: @circular-logo-small / 2;
+    background-size: @circular-logo-small @circular-logo-small;
+  }
+}
