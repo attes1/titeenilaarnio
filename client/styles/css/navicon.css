@@ -50,21 +50,21 @@
   transition: 0;
   background: rgba(0, 0, 0, 0.1);
 }
-.lines-button.x.closed .lines {
+.lines-button.x.open .lines {
   background: transparent;
 }
-.lines-button.x.closed .lines:before,
-.lines-button.x.closed .lines:after {
+.lines-button.x.open .lines:before,
+.lines-button.x.open .lines:after {
   transform-origin: 50% 50%;
   -webkit-transform-origin: 50% 50%;
   top: 0;
   width: 2rem;
 }
-.lines-button.x.closed .lines:before {
+.lines-button.x.open .lines:before {
   transform: rotate3d(0, 0, 1, 45deg);
   -webkit-transform: rotate3d(0, 0, 1, 45deg);
 }
-.lines-button.x.closed .lines:after {
+.lines-button.x.open .lines:after {
   transform: rotate3d(0, 0, 1, -45deg);
   -webkit-transform: rotate3d(0, 0, 1, -45deg);
 }
