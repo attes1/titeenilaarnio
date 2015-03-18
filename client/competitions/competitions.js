@@ -10,6 +10,6 @@
           templateUrl: 'competitions/competitions.html'
         }
       }
-    })
+    });
   });
 }(angular));

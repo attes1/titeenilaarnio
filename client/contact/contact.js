@@ -11,7 +11,7 @@
           controller: 'ContactController'
         }
       }
-    })
+    });
   })
 
   .controller('ContactController', function ($scope) {

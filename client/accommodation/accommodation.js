@@ -10,6 +10,6 @@
           templateUrl: 'accommodation/accommodation.html'
         }
       }
-    })
+    });
   });
 }(angular));
