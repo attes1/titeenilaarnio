@@ -1,3 +1,10 @@
+#wrapper .footer {
+  height: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
 #wrapper .side-navigation {
   background-color: #191919;
   margin-left: -200px;
@@ -44,11 +51,18 @@
   height: auto;
   transition: all .4s ease 0s;
 }
+#wrapper .main .footer {
+  padding-left: 50px;
+  transition: all .4s ease 0s;
+}
 #wrapper.side-navi-open .side-navigation {
   left: 200px;
 }
 @media only screen and (min-width: 550px) {
   #wrapper.side-navi-open .main {
+    padding-left: 250px;
+  }
+  #wrapper.side-navi-open .footer {
     padding-left: 250px;
   }
 }

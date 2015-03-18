@@ -6,9 +6,19 @@
 @side-navi-link-height:     40px;
 @side-navi-toggle-height:   50px;
 
+@footer-height:             60px;
+
 @slide-transition:          all .4s ease 0s;
 
 #wrapper {
+  .footer {
+    height: @footer-height;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+  }
+
   .side-navigation {
     background-color: @navigation-background;
 
@@ -62,6 +72,11 @@
     height: auto;
 
     transition: all .4s ease 0s;
+
+    .footer {
+      padding-left: @side-navi-width-closed;
+      transition: all .4s ease 0s;
+    }
   }
 
   &.side-navi-open {
@@ -71,6 +86,10 @@
 
     @media only screen and (min-width: 550px) {
       .main {
+        padding-left: @side-navi-width-open;
+      }
+
+      .footer {
         padding-left: @side-navi-width-open;
       }
     }

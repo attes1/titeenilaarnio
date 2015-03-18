@@ -4,6 +4,7 @@ body {
   font-family: @font-family;
   background-color: @content-background;
   color: @content-foreground;
+  text-align: justify;
 }
 
 .view-header {
@@ -19,6 +20,23 @@ body {
 
 .content {
   padding: 1.5rem;
+  margin-bottom: 60px;
+}
+
+.footer {
+  background-color: @logos-background;
+
+  p {
+    text-align: center;
+  }
+
+  img {
+    &.logo {
+      height: 50px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
 }
 
 @circular-logo-size:    100px;

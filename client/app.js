@@ -8,6 +8,7 @@
     'titeenilaarnio.navigation',
     'titeenilaarnio.main',
     'titeenilaarnio.accommodation',
+    'titeenilaarnio.competitions',
     'titeenilaarnio.contact',
     'titeenilaarnio.scoreboard',
     'titeenilaarnio.bonusgame',
