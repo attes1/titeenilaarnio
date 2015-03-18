@@ -5,6 +5,7 @@
     'ngTouch',
     'ui.router', 
 
+    'titeenilaarnio.account',
     'titeenilaarnio.navigation',
     'titeenilaarnio.main',
     'titeenilaarnio.accommodation',

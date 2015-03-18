@@ -17,12 +17,16 @@ body {
   padding: 1.5rem;
   margin-bottom: 60px;
 }
-.content p {
-  margin-top: 5px;
+.content p,
+.content form {
+  margin-top: 0.4rem;
 }
 .content hr.small {
   margin-top: 0.5rem;
   margin-bottom: 2rem;
+}
+.content form input {
+  color: #191919;
 }
 .footer {
   background-color: #4c4c4c;
