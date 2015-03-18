@@ -128,11 +128,15 @@
       var testLocation = { lat: 61.44979, lon: 23.85749 };
       $scope.testLocationText = testLocation.lat + ' / ' + testLocation.lon;
 
-      geolocation.getLocation().then(function (response) {
+      geolocation.getLocation({
+        enableHighAccuracy: true,
+        timeout: 500,
+        maxiumAge: 0
+      }).then(function (response) {
         currentLocation = { lat: response.coords.latitude, lon: response.coords.longitude };
         $scope.currentLocationText = response.coords.latitude + ' / ' + response.coords.longitude;
         $scope.distance = calculateDistance(testLocation.lat, testLocation.lon, currentLocation.lat, currentLocation.lon);
-        console.log(calculateDistance(testLocation.lat, testLocation.lon, currentLocation.lat, currentLocation.lon));
+        $scope.accuracy = response.coords.accuracy;
       });
     };
   });
