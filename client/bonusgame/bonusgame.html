@@ -1,24 +1,22 @@
 <div class="view-header">
-    <h3>Bonuslaji</h3>
+    <h3>Bonuslaji <span class="pull-right">Vincit Oy</span></h3>
 </div>
 
 <div class="row">
   <div class="six columns">
-    <button class="button-primary" ng-click="toggleRadar()">Tutka</button>
+    <button class="button-primary" ng-click="toggleRadar()">
+      Tutka <span ng-hide="radarOn">päälle</span><span ng-show="radarOn">pois</span>
+    </button>
   </div>
 
   <div class="six columns">
     <button class="button-primary pull-right">Syötä koodi</button>
   </div>
 
-  <h1 ng-show="radarOn">Tutka päällä</h1>
-  <h1>{{ level }}</h1>
+  <div id="radar" ng-show="radarOn">
+    <div class="radar-indicator"></div>
+  </div>
 
-
-  <button class="button-primary" ng-click="test()">TESTAA :D:D</button>
-
-  <h2>D: {{ distance }}</h2>
-  <h2>CL: {{ currentLocationText }}</h2>
-  <h2>TL: {{ testLocationText }}</h2>
-  <h2>A: {{ accuracy }}</h2>
+  <div id="code-entry">
+  </div>
 </div>
