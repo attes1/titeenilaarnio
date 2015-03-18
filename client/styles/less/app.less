@@ -113,10 +113,23 @@ a {
 #icons { font-size: 0.7em }
 #whereami { color: white; float: right; margin-left: 10px }
 
-.radar {
-  .level-0 { background-color: #FF160F; }
-  .level-1 { background-color: #FF4D04; }
-  .level-2 { background-color: #C9C4C9; }
-  .level-3 { background-color: #5396BA; }
-  .level-4 { background-color: #1717FF; }
+@radar-indicator-size: 30rem;
+
+#radar {
+  .radar-indicator {
+    width: @radar-indicator-size;
+    height: @radar-indicator-size;
+
+    border-radius: @radar-indicator-size / 2;
+    -webkit-border-radius: @radar-indicator-size / 2;
+    -moz-border-radius: @radar-indicator-size / 2;
+
+    background-color: #000000;
+
+    &.level-0 { background-color: #FF160F; }
+    &.level-1 { background-color: #FF4D04; }
+    &.level-2 { background-color: #C9C4C9; }
+    &.level-3 { background-color: #5396BA; }
+    &.level-4 { background-color: #1717FF; }
+  }
 }

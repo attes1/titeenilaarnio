@@ -118,9 +118,11 @@
     };
 
     $scope.radarOn = false;
+    $scope.entryCode = false;
 
     $scope.toggleRadar = function () {
       $scope.radarOn = !$scope.radarOn;
+      $scope.entryCode = false;
 
       if ($scope.radarOn) {
         startRadar();
@@ -128,6 +130,11 @@
       else {
         stopRadar();
       }
+    };
+
+    $scope.toggleCodeEntry = function () {
+      $scope.radarOn = false;
+      $scope.entryCode = !$scope.entryCode;
     };
 
     // For debuging

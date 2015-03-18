@@ -10,13 +10,24 @@
   </div>
 
   <div class="six columns">
-    <button class="button-primary pull-right">Syötä koodi</button>
+    <button class="button-primary pull-right" ng-click="toggleCodeEntry()">Syötä koodi</button>
   </div>
+</div>
 
-  <div id="radar" ng-show="radarOn">
+<hr class="small" />
+
+<div class="row" ng-show="radarOn"> 
+  <div id="radar" class="columns twelve">
     <div class="radar-indicator"></div>
   </div>
+</div>
 
-  <div id="code-entry">
+<div class="row" ng-show="!radarOn && entryCode">
+  <div class="eight columns" id="code-entry">
+    <input class="u-full-width" type="text" placeholder="Koodi" />
+  </div>
+
+  <div class="four columns">
+    <input class="button-primary pull-right" type="submit" value="Tarkasta" /> 
   </div>
 </div>
