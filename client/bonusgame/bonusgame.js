@@ -53,9 +53,11 @@
 
     var thresholds = [ 2, 5, 10, 15, 20, 25 ];
 
-    var radar = null;
+    var radar = undefined;
 
     var radarTick = function () {
+      console.log('tick');
+
       geolocation.getLocation().then(
         function (response) {
           var nearest = _.min(locations, function (location) {
@@ -73,19 +75,27 @@
           else {
             $scope.level = i;
           }
+
+          console.log(response);
         },
         function (err, response) {
           $scope.level = thresholds.length;
+
+          console.log(response);
         }
       );
     };
 
     var startRadar = function () {
+      console.log('foo');
+
       if (angular.isDefined(radar)) {
         return;
       }
 
-      radar = $interval(radarTick, 3000);
+      console.log('radar started');
+
+      radar = $interval(radarTick, 1000);
     };
 
     var stopRadar = function () {
