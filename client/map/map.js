@@ -17,7 +17,7 @@
     [{
       id: "tite",
       title: "TiTe",
-      text: "Kaikille samat säännöt.",
+      text: "Kaikille samat säännöt. Korkeakoulunkatu 1",
       icon: "/assets/icons/tite.png",
       show: false,
       coords: {
@@ -28,7 +28,7 @@
     {
       id: "kyla",
       title: "Kisakylä",
-      text: "Pääkallopaikka. Sattuu ja tapahtuu.",
+      text: "Pääkallopaikka. Sattuu ja tapahtuu. Korkeakoulunkatu 12",
       icon: "/assets/icons/skull33.png",
       show: false,
       coords: {
@@ -39,7 +39,7 @@
     {
       id: "majoitus",
       title: "Majoitus",
-      text: "Avoinna: la 00:00 - 11:00 su 00:00 - 11:00<br>Ei ole lepokoti.<br>Päivystys: <a href='tel:0451207348'>045 120 7348</a>",
+      text: "Avoinna: la 00:00 - 11:00 su 00:00 - 11:00<br>Ei ole lepokoti.<br>Päivystys: <a href='tel:0451207348'>045 120 7348</a>, Korkeakoulunkatu 10",
       icon: "/assets/icons/bed33.png",
       show: false,
       coords: {
@@ -49,7 +49,7 @@
     },
     {
       id: "edison",
-      title: "Juvenes ravintola Edison",
+      title: "Juvenes ravintola Edison, Korkeakoulunkatu 6",
       text: "Avoinna: la 11:00 - 14:00<br><br>Lihapyörykät<br>Kermainen pippurikastike<br>Lohikeitto<br>Feta-kasviskastike<br>Kuitupasta",
       icon: "/assets/icons/restaurant1.png",
       show: false,
@@ -61,7 +61,7 @@
     {
       id: "kapina",
       title: "Pub Kultainen Apina",
-      text: "Avoinna 12:00 - 03:00<br>Karaoke kello 21:30 alkaen.",
+      text: "Avoinna 12:00 - 03:00<br>Karaoke kello 21:30 alkaen. Insinöörinkatu 30",
       icon: "/assets/icons/beer34.png",
       show: false,
       coords: {
@@ -72,7 +72,7 @@
     {
       id: "pizza",
       title: "Pizzamestat",
-      text: "Pizza Service &gt; Haitari &gt; Castello. <a href='https://pizza-online.fi/web/find/index?search_by=address&value=Insin%C3%B6%C3%B6rinkatu+30%2C+Tampere#search_results'>pizzaonline.fi</a>",
+      text: "Pizza Service &gt; Haitari &gt; Castello. <a href='https://pizza-online.fi/web/find/index?search_by=address&value=Insin%C3%B6%C3%B6rinkatu+30%2C+Tampere#search_results'>pizzaonline.fi</a>. Insinöörinkatu 30",
       icon: "/assets/icons/pizza3.png",
       show: false,
       coords: {
@@ -83,7 +83,7 @@
     {
       id: "duo",
       title: "Kauppa&Keskus Duo",
-      text: "Avoinna: pe 08:00 - 21:00 la 09:00 - 18:00<br>K/S-market, natsisiwa, <strong>ALKO</strong>, subi, kotipizzaburger, kenkäkauppa, hammaslääkäri...",
+      text: "Avoinna: pe 08:00 - 21:00 la 09:00 - 18:00<br>K/S-market, natsisiwa, <strong>ALKO</strong>, subi, kotipizzaburger, kenkäkauppa, hammaslääkäri... Pietilänkatu 2",
       icon: "/assets/icons/marker20.png",
       show: false,
       coords: {
@@ -94,7 +94,7 @@
     {
       id: "siwa",
       title: "Siwa",
-      text: "Avoinna: 08:00 - 23:00",
+      text: "Avoinna: 08:00 - 23:00, Lindforsinkatu 2",
       icon: "/assets/icons/marker20.png",
       show: false,
       coords: {
@@ -105,7 +105,7 @@
     {
       id: "alko",
       title: "Systembolaget",
-      text: "Sauli Anto, Systembolaget ei.",
+      text: "Sauli Anto, Systembolaget ei. Pietilänkatu 2",
       icon: "/assets/icons/dark45.png",
       show: false,
       coords: {
@@ -116,7 +116,7 @@
     {
       id: "grilli",
       title: "Herwood Grilli",
-      text: "Avoinna: ~17:00 - ~05:00",
+      text: "Avoinna: ~17:00 - ~05:00, Insinöörinkatu 40",
       icon: "/assets/icons/fastfood1.png",
       show: false,
       coords: {
@@ -127,14 +127,37 @@
     {
       id: "sauna",
       title: "Teekkarisauna",
-      text: "Ei todellakaan ole lepokoti!",
+      text: "Ei todellakaan ole lepokoti! Tekniikankatu 11",
       icon: "/assets/icons/couple54.png",
       show: false,
       coords: {
         latitude: 61.452716, 
         longitude: 23.859971
       }
-    }];
+    },
+    {
+      id: "cinola",
+      title: "Elokuvateatteri Cinola",
+      text: "Herwantapeli. Lindforsinkatu 1",
+      icon: "/assets/icons/mustache13.png",
+      show: false,
+      coords: {
+        latitude: 61.450158,
+        longitude: 23.847865
+      }
+    },
+    {
+      id: "cupola",
+      title: "Yöravintola Cupola",
+      text: "Missä on jatkot? Lindforsinkatu 1",
+      icon: "/assets/icons/discjockey.png",
+      show: false,
+      coords: {
+        latitude: 61.450276,
+        longitude: 23.848391
+      }
+    },
+    ];
     var showing = null;
     $scope.map = { center: { latitude: 61.450650, longitude: 23.855030 }, zoom: 16, markers: $scope.points, polygons:
       [
@@ -206,7 +229,7 @@
         var you = {
           id: "me",
           title: "Olet tässä",
-          text: "Ainakin "+acc+" metrin tarkkuudella...",
+          text: "Noin "+acc+" metrin tarkkuudella...",
           show: true,
           coords: {
             latitude: lat,
