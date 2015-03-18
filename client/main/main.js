@@ -10,6 +10,6 @@
           templateUrl: 'main/main.html'
         }
       }
-    })
+    });
   });
 }(angular));

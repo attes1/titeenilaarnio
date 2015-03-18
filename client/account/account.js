@@ -10,6 +10,6 @@
           templateUrl: 'account/login.html'
         }
       }
-    })
+    });
   });
 }(angular));

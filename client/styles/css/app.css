@@ -83,3 +83,18 @@ body {
 #icons {
   font-size: 0.7em;
 }
+.radar .level-0 {
+  background-color: #FF160F;
+}
+.radar .level-1 {
+  background-color: #FF4D04;
+}
+.radar .level-2 {
+  background-color: #C9C4C9;
+}
+.radar .level-3 {
+  background-color: #5396BA;
+}
+.radar .level-4 {
+  background-color: #1717FF;
+}

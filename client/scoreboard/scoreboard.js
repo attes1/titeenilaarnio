@@ -10,6 +10,6 @@
           templateUrl: 'scoreboard/scoreboard.html'
         }
       }
-    })
+    });
   });
 }(angular));
