@@ -11,5 +11,8 @@
     "ngCordova": "~0.1.12-alpha",
     "angular-google-maps": "~2.0.17",
     "lodash": "~3.5.0"
+  },
+  "resolutions": {
+    "lodash": "~2.4.1"
   }
 }
