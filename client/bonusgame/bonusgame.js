@@ -46,6 +46,13 @@
       return d;
     };
 
+    // Joo, nää kovakoodattiin nyt tähä, kun ei näitä voi servultakaan pollata koko ajan
+    // ja ei jaksettu tehdä elegantimpaa ratkasua. Jos jaksoit tänne asti ni käytä hyväkses.
+    //
+    // ps. Muita "exploiteja" ei ole, transaktiolukot ja muut on bäkkärille tehty.
+    //
+    // pps. Tietysti tehtiin :DDD
+
     var locations = [
       { lat: 61.44858871, lon: 23.85798343 },
       { lat: 61.4483938, lon: 23.8578118 },
