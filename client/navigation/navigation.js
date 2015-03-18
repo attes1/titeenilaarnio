@@ -20,6 +20,9 @@
         $scope.navigationClosed = true;
         $scope.navigationThreshold = true;
       }
+      else {
+        $scope.navigationThreshold = false;
+      }
     });
 
     window.onresize = function () {
