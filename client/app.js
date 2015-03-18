@@ -13,7 +13,9 @@
     'titeenilaarnio.contact',
     'titeenilaarnio.scoreboard',
     'titeenilaarnio.bonusgame',
-    'titeenilaarnio.map' ])
+    'titeenilaarnio.map',
+    'titeenilaarnio.robocode',
+    'titeenilaarnio.timeline', ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('titeenilaarnio', {

@@ -2,3 +2,40 @@
     <h3>Aikataulu</h3>
 </div>
 
+<strong>Perjantai:</strong>
+<div ng-repeat="event in eventsFriday" class="row">
+  <div class="one columns">
+      {{ event.time }}
+  </div>
+  <div class="eleven columns">
+      {{ event.description }}
+      <a href="/#/map/{{ event.placeId }}"><img src="/assets/icons/{{ event.placeIcon }}"></a>
+  </div>
+</div>
+<br />
+<strong>Lauantai:</strong>
+<div ng-repeat="event in eventsSaturday" class="row">
+  <div class="one columns">
+      {{ event.time }}
+  </div>
+  <div class="eleven columns">
+      {{ event.description }}
+      <a href="/#/map/{{ event.placeId }}"><img src="/assets/icons/{{ event.placeIcon }}"></a>
+  </div>
+  <div>
+  </div>
+</div>
+<br />
+<strong>Sunnuntai:</strong>
+<div ng-repeat="event in eventsSunday" class="row">
+  <div class="one columns">
+      {{ event.time }}
+  </div>
+  <div class="eleven columns">
+      {{ event.description }}
+      <a href="/#/map/{{ event.placeId }}"><img src="/assets/icons/{{ event.placeIcon }}"></a> 
+  </div>
+  <div>
+  </div>
+</div>
+
