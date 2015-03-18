@@ -1,3 +1,11 @@
 <div class="view-header">
-    <h3>Kartta</h3>
+	<h3>Kartta</h3>
+	<div id="map_canvas" ng-controller="MapController">
+		<ui-gmap-google-map center="map.center" zoom="map.zoom" options="options">
+			<ui-gmap-markers models="markers" icon="'icon'" coords="'coords'">
+				<ui-gmap-windows show="show"><div ng-non-bindable class="mappopup"><strong>{{title}}</strong><br>{{text}}</div></ui-gmap-windows>
+			</ui-gmap-markers>
+		</ui-gmap-google-map>
+	</div>
+	<div id="icons">Icons made by <a href="http://www.flaticon.com/authors/stephen-hutchings" title="Stephen Hutchings">Stephen Hutchings</a>, <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, <a href="http://www.flaticon.com/authors/icons8" title="Icons8">Icons8</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
 </div>

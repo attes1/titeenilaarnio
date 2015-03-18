@@ -49,3 +49,9 @@ body {
   -moz-border-radius: 30px;
   background-size: 60px 60px;
 }
+.angular-google-map-container {
+  height: 640px;
+}
+.mappopup {
+  color: black;
+}
