@@ -4,6 +4,7 @@
   left: 0;
   right: 0;
   position: fixed;
+  z-index: 100 !important;
 }
 #wrapper .side-navigation {
   background-color: #191919;
@@ -12,7 +13,7 @@
   width: 250px;
   position: fixed;
   height: 100%;
-  z-index: 999;
+  z-index: 999 !important;
   transition: all 0.4s ease 0s;
 }
 #wrapper .side-navigation .side-navi-toggle {
