@@ -21,6 +21,7 @@
     "jshint-stylish": "*",
     "gulp-concat": "*",
     "gulp-uglify": "*",
-    "gulp-less": "*"
+    "gulp-less": "*",
+    "passport": "*"
   }
 }
