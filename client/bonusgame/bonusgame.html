@@ -1,4 +1,15 @@
 <div class="view-header">
     <h3>Bonuslaji</h3>
-    <span class="pull-right">vincit-logo-placeholder</span>
+</div>
+
+<div class="row">
+  <div class="six columns">
+    <button class="button-primary" ng-click="toggleRadar()">Tutka</button>
+  </div>
+
+  <div class="six columns">
+    <button class="button-primary pull-right">Syötä koodi</button>
+  </div>
+
+  <h1 ng-show="radarOn">{{ level }}</h1>
 </div>
