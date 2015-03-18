@@ -1,24 +1,33 @@
 <div class="view-header">
-    <h3>Bonuslaji</h3>
+    <h3>Bonuslaji <span class="pull-right">Vincit Oy</span></h3>
 </div>
 
 <div class="row">
   <div class="six columns">
-    <button class="button-primary" ng-click="toggleRadar()">Tutka</button>
+    <button class="button-primary" ng-click="toggleRadar()">
+      Tutka <span ng-hide="radarOn">päälle</span><span ng-show="radarOn">pois</span>
+    </button>
   </div>
 
   <div class="six columns">
-    <button class="button-primary pull-right">Syötä koodi</button>
+    <button class="button-primary pull-right" ng-click="toggleCodeEntry()">Syötä koodi</button>
+  </div>
+</div>
+
+<hr class="small" />
+
+<div class="row" ng-show="radarOn"> 
+  <div id="radar" class="columns twelve">
+    <div class="radar-indicator"></div>
+  </div>
+</div>
+
+<div class="row" ng-show="!radarOn && entryCode">
+  <div class="eight columns" id="code-entry">
+    <input class="u-full-width" type="text" placeholder="Koodi" />
   </div>
 
-  <h1 ng-show="radarOn">Tutka päällä</h1>
-  <h1>{{ level }}</h1>
-
-
-  <button class="button-primary" ng-click="test()">TESTAA :D:D</button>
-
-  <h2>D: {{ distance }}</h2>
-  <h2>CL: {{ currentLocationText }}</h2>
-  <h2>TL: {{ testLocationText }}</h2>
-  <h2>A: {{ accuracy }}</h2>
+  <div class="four columns">
+    <input class="button-primary pull-right" type="submit" value="Tarkasta" /> 
+  </div>
 </div>

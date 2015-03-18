@@ -10,7 +10,7 @@
     "font-awesome": "components-font-awesome#v4.3.0",
     "angular-google-maps": "~2.0.17",
     "lodash": "~3.5.0",
-    "angularjs-geolocation": "~0.1.1"
+    "getAccurateCurrentPosition": "https://github.com/gwilson/getAccurateCurrentPosition.git"
   },
   "resolutions": {
     "lodash": "~2.4.1"

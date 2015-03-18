@@ -1,8 +1,9 @@
 (function (angular) {
   'use strict';
   angular.module('titeenilaarnio.navigation', [ 'ui.router', 'titeenilaarnio.navigation' ])
-  .controller('LayoutController', function ($scope) {
+  .controller('LayoutController', function ($scope, $rootScope) {
     $scope.navigationClosed = false;
+    $scope.navigationThreshold = false;
 
     $scope.toggleNavigation = function () {
       $scope.navigationClosed = !$scope.navigationClosed;
@@ -17,12 +18,22 @@
     $scope.$watch($scope.getWidth, function(newValue, oldValue) {
       if (newValue <= mobileView) {
         $scope.navigationClosed = true;
+        $scope.navigationThreshold = true;
+      }
+      else {
+        $scope.navigationThreshold = false;
       }
     });
 
     window.onresize = function () {
       $scope.$apply();
     };
+
+    $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromtParams) {
+      if ($scope.navigationThreshold) {
+        $scope.navigationClosed = true;
+      }
+    });
   })
 
   .controller('SponsorController', function ($scope, $interval) {
@@ -34,7 +45,6 @@
       { name: 'wapice', url: baseUrl + 'wapice.png' },
       { name: 'mfiles', url: baseUrl + 'mfiles.png' },
     ];
-
     
     var x = Math.floor(Math.random() * $scope.logos.length);
     $scope.showLogo = $scope.logos[x];

@@ -53,27 +53,18 @@
 
 <hr class="small" />
 
-<table class="u-full-width">
-  <thead>
-    <tr>
-      <th>Vastuualue</th>
-      <th>Nick</th>
-      <th>Realname</th>
-      <th>Puhelin</th>
-    </tr>
-  </thead>
-  <tr ng-repeat="organizer in organizers">
-    <td>
-      {{ organizer.title }}
-    </td>
-    <td>
-      {{ organizer.nick }}
-    </td>
-    <td>
-      {{ organizer.realName }}
-    </td>
-    <td>
-      <a href="{{ 'tel:' + organizer.phone }}">{{ organizer.phone }}</a>
-    </td>
-  </tr>
-</table>
+<div ng-repeat="organizer in organizers">
+  <hr class="small" ng-hide="$first" />
+
+  <div class="row">
+    <div class="six columns">
+      {{ organizer.title }} <br />
+      <strong>{{ organizer.firstName + ' \'' + organizer.nick + '\' ' + organizer.lastName}}</strong>
+    </div>
+    <div class="six columns">
+        <br />
+        <a href="{{ 'tel:' + organizer.phone }}">{{ organizer.phone }}</a>
+    </div>
+  </div>
+</div>
+

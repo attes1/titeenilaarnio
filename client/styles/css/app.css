@@ -4,6 +4,9 @@ body {
   color: #ffffff;
   text-align: justify;
 }
+a {
+  cursor: pointer;
+}
 .view-header {
   height: 50px;
 }
@@ -66,15 +69,21 @@ body {
   background: transparent url("/assets/digit.png") no-repeat;
 }
 .circular-logo.small {
-  width: 60px;
-  height: 60px;
+  width: 5rem;
+  height: 5rem;
   /*border-radius: @circular-logo-small / 2;
     -webkit-border-radius: @circular-logo-small / 2;
     -moz-border-radius: @circular-logo-small / 2;*/
-  background-size: 60px 60px;
+  background-size: 5rem 5rem;
 }
 .mappopup {
   color: black;
+}
+.mappopup p {
+  margin: 5px 0;
+}
+#map_canvas {
+  height: 640px;
 }
 .angular-google-map,
 .angular-google-map-container {
@@ -83,18 +92,35 @@ body {
 #icons {
   font-size: 0.7em;
 }
-.radar .level-0 {
+#whereami {
+  color: white;
+  float: right;
+  margin-left: 10px;
+}
+#radar .radar-indicator {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 15rem;
+  -webkit-border-radius: 15rem;
+  -moz-border-radius: 15rem;
+  background-color: #000000;
+}
+#radar .radar-indicator.level-0 {
   background-color: #FF160F;
 }
-.radar .level-1 {
+#radar .radar-indicator.level-1 {
   background-color: #FF4D04;
 }
-.radar .level-2 {
+#radar .radar-indicator.level-2 {
   background-color: #C9C4C9;
 }
-.radar .level-3 {
+#radar .radar-indicator.level-3 {
   background-color: #5396BA;
 }
-.radar .level-4 {
+#radar .radar-indicator.level-4 {
   background-color: #1717FF;
+}
+.eventimg {
+  height: 32px;
+  vertical-align: middle;
 }

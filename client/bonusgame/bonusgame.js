@@ -1,6 +1,6 @@
 (function (angular) {
   'use strict';
-  angular.module('titeenilaarnio.bonusgame', [ 'ui.router', 'geolocation', 'titeenilaarnio.bonusgame' ])
+  angular.module('titeenilaarnio.bonusgame', [ 'ui.router', 'titeenilaarnio.bonusgame' ])
   .config(function ($stateProvider) {
     $stateProvider
     .state('titeenilaarnio.bonusgame', {
@@ -24,7 +24,7 @@
     });
   })
 
-  .controller('BonusGameController', function ($scope, $interval, geolocation) {
+  .controller('BonusGameController', function ($scope, $interval) {
     var toRadians = function (x) {
       return x * Math.PI / 180;
     };
@@ -46,11 +46,19 @@
       return d;
     };
 
+    // Joo, nää kovakoodattiin nyt tähä, kun ei näitä voi servultakaan pollata koko ajan
+    // ja ei jaksettu tehdä elegantimpaa ratkasua. Jos jaksoit tänne asti ni käytä hyväkses.
+    //
+    // ps. Muita "exploiteja" ei ole, transaktiolukot ja muut on bäkkärille tehty.
+    //
+    // pps. Tietysti tehtiin :DDD
+
     var locations = [
       { lat: 61.44858871, lon: 23.85798343 },
       { lat: 61.4483938, lon: 23.8578118 },
       { lat: 61.44834009, lon: 23.8577371 },
-      { lat: 61.4483013, lon: 23.85780036 }
+      { lat: 61.4483013, lon: 23.85780036 },
+      { lat: 61.44979, lon: 23.85749 }
     ];
 
     var thresholds = [ 2, 5, 10, 15, 20, 25 ];
@@ -60,8 +68,7 @@
     var radarTick = function () {
       console.log('tick');
 
-      geolocation.getLocation().then(
-        function (response) {
+      navigator.geolocation.getAccurateCurrentPosition(function (response) {
           var nearest = _.min(locations, function (location) {
             location.distance = calculateDistance(response.coords.latitude, response.coords.longitude, location.lat, location.lon);
             return location.distance;
@@ -80,10 +87,13 @@
 
           console.log(response);
         },
-        function (err, response) {
+        function (response) {
           $scope.level = thresholds.length;
-
           console.log(response);
+        },
+        function() {},
+        {
+          desiredAccuracy: 5, maxWait: 5000
         }
       );
     };
@@ -108,9 +118,11 @@
     };
 
     $scope.radarOn = false;
+    $scope.entryCode = false;
 
     $scope.toggleRadar = function () {
       $scope.radarOn = !$scope.radarOn;
+      $scope.entryCode = false;
 
       if ($scope.radarOn) {
         startRadar();
@@ -120,24 +132,15 @@
       }
     };
 
-    $scope.test = function () {
-      // For debuging
-      var currentLocation = null;
-      $scope.currentLocationText = null;
-      
-      var testLocation = { lat: 61.44979, lon: 23.85749 };
-      $scope.testLocationText = testLocation.lat + ' / ' + testLocation.lon;
-
-      geolocation.getLocation({
-        enableHighAccuracy: true,
-        timeout: 500,
-        maxiumAge: 0
-      }).then(function (response) {
-        currentLocation = { lat: response.coords.latitude, lon: response.coords.longitude };
-        $scope.currentLocationText = response.coords.latitude + ' / ' + response.coords.longitude;
-        $scope.distance = calculateDistance(testLocation.lat, testLocation.lon, currentLocation.lat, currentLocation.lon);
-        $scope.accuracy = response.coords.accuracy;
-      });
+    $scope.toggleCodeEntry = function () {
+      $scope.radarOn = false;
+      $scope.entryCode = !$scope.entryCode;
     };
+
+    // For debuging
+    $scope.currentLocation = null;
+    navigator.geolocation.getAccurateCurrentPosition(function (response) {
+      $scope.currentLocation = response.coords.latitude + ' / ' + response.coords.longitude;
+    }, function(){}, function(){}, { desiredAccuracy: 5, maxWait: 5000 });
   });
 }(angular));
