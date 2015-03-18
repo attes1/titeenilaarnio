@@ -79,6 +79,9 @@ a {
 .mappopup {
   color: black;
 }
+.mappopup p {
+  margin: 5px 0;
+}
 #map_canvas {
   height: 640px;
 }
@@ -88,6 +91,11 @@ a {
 }
 #icons {
   font-size: 0.7em;
+}
+#whereami {
+  color: white;
+  float: right;
+  margin-left: 10px;
 }
 .radar .level-0 {
   background-color: #FF160F;

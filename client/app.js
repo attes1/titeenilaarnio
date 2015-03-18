@@ -19,7 +19,7 @@
     .state('titeenilaarnio', {
       url: '/',
       abstract: true,
-    })
+    });
 
     $urlRouterProvider.otherwise('/main');
   });

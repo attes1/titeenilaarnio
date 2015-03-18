@@ -10,9 +10,9 @@
           templateUrl: 'map/map.html'
         }
       }
-    })
+    });
   }).controller('MapController', function($scope, $stateParams) {
-    $scope.options = { scrollwheel: true }
+    $scope.options = { scrollwheel: true };
     $scope.points =
     [{
       id: "tite",
@@ -37,9 +37,9 @@
       }
     },
     {
-      id: "bommari",
-      title: "Bommari",
-      text: "Nuku hyvin.",
+      id: "majoitus",
+      title: "Majoitus eli bommari",
+      text: "Ei ole lepokoti.",
       icon: "/assets/icons/bed33.png",
       show: false,
       coords: {
@@ -50,7 +50,7 @@
     {
       id: "edison",
       title: "Juvenes ravintola Edison",
-      text: "",
+      text: "lauantai 21.3.2015<br>Avoinna: 11:00 - 14:00<br><br>Lihapyörykät<br>Kermainen pippurikastike<br>Lohikeitto<br>Feta-kasviskastike<br>Kuitupasta",
       icon: "/assets/icons/restaurant1.png",
       show: false,
       coords: {
@@ -112,40 +112,39 @@
         latitude: 61.450141,
         longitude: 23.849697
       }
-    }
-    ]
+    }];
     var showing = null;
-    $scope.map = { center: { latitude: 61.450650, longitude: 23.855030 }, zoom: 16, markers: $scope.points }
-    $scope.myMap = {}
+    $scope.map = { center: { latitude: 61.450650, longitude: 23.855030 }, zoom: 16, markers: $scope.points };
+    $scope.myMap = {};
     $scope.showMarker = function(id) {
-      _.find($scope.map.markers, function(marker) { return marker.id == id }).show = true
-    }
+      _.find($scope.map.markers, function(marker) { return marker.id == id; }).show = true;
+    };
     if($stateParams.markerId) {
-      $scope.showMarker($stateParams.markerId)
+      $scope.showMarker($stateParams.markerId);
     }
     function onMarkerClicked(marker) {
       if(showing){
-        var tohide = _.filter($scope.map.markers,function(x){if(x.id == showing) {return true} return false})[0]
-        tohide.show = false
+        var tohide = _.filter($scope.map.markers,function(x){ return x.id == showing; })[0];
+        tohide.show = false;
       }
       _.each($scope.map.markers, function(tohide) {
-        tohide.show = false
-      })
-      showing = marker.id
-      marker.show = true
-      $scope.$apply()
+        tohide.show = false;
+      });
+      showing = marker.id;
+      marker.show = true;
+      $scope.$apply();
     }
     _.each($scope.map.markers, function(amarker) {
       amarker.onClicked = function() {
-        onMarkerClicked(amarker)
+        onMarkerClicked(amarker);
       };
     });
     $scope.youAreHere = function() {
       navigator.geolocation.getCurrentPosition(function(response) {
-        var oldpos = _.find($scope.map.markers, function(marker){ return marker.id == 'me' })
-        var acc = parseInt(response.coords.accuracy)
-        var lat = response.coords.latitude
-        var lon = response.coords.longitude
+        var oldpos = _.find($scope.map.markers, function(marker){ return marker.id == 'me'; });
+        var acc = parseInt(response.coords.accuracy);
+        var lat = response.coords.latitude;
+        var lon = response.coords.longitude;
         var you = {
           id: "me",
           title: "Olet tässä",
@@ -155,19 +154,19 @@
             latitude: lat,
             longitude: lon
           }
-        }
+        };
         if(oldpos) {
-          oldpos.text = you.text
-          oldpos.show = true
-          oldpos.coords.latitude = lat
-          oldpos.coords.longitude = lon
+          oldpos.text = you.text;
+          oldpos.show = true;
+          oldpos.coords.latitude = lat;
+          oldpos.coords.longitude = lon;
         } else {
-          $scope.map.markers.push(you)
+          $scope.map.markers.push(you);
         }
         $scope.myMap.refresh();
-        $scope.$apply()
-      }, function() { alert('En tiedä!') }, { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 })
-    }
+        $scope.$apply();
+      }, function() { alert('En tiedä! Onko gepsi päällä?'); }, { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 });
+    };
   }).directive('resize', function ($window) {
     return function ($scope, element, attr) {
 
@@ -183,7 +182,7 @@
             $scope.resizeWithOffset = function (offsetH) {
                 $scope.$eval(attr.notifier);
                 return { 
-                    'height': (newValue.h - offsetH) + 'px'                    
+                    'height': (newValue.h - offsetH) + 'px'
                 };
             };
 
@@ -193,6 +192,6 @@
             $scope.myMap.refresh();
             $scope.$apply();
         });
-    }
+    };
 }); 
 }(angular));
