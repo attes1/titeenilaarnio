@@ -30,18 +30,20 @@
     };
 
     var calculateDistance = function (lat1, lon1, lat2, lon2) {
-      var R = 6371000;
+      var R = 6371000.0;
       var φ1 = toRadians(lat1);
       var φ2 = toRadians(lat2);
       var Δφ = toRadians(lat2 - lat1);
       var Δλ = toRadians(lon2 - lon1);
 
-      var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+      var a = Math.sin(Δφ/2.0) * Math.sin(Δφ/2.0) +
         Math.cos(φ1) * Math.cos(φ2) *
-        Math.sin(Δλ/2) * Math.sin(Δλ/2);
+        Math.sin(Δλ/2.0) * Math.sin(Δλ/2.0);
       var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
       var d = R * c;
+
+      return d;
     };
 
     var locations = [
@@ -118,10 +120,20 @@
       }
     };
 
-    // For debuging
-    $scope.currentLocation = null;
-    geolocation.getLocation().then(function (response) {
-      $scope.currentLocation = response.coords.latitude + ' / ' + response.coords.longitude;
-    });
+    $scope.test = function () {
+      // For debuging
+      var currentLocation = null;
+      $scope.currentLocationText = null;
+      
+      var testLocation = { lat: 61.44979, lon: 23.85749 };
+      $scope.testLocationText = testLocation.lat + ' / ' + testLocation.lon;
+
+      geolocation.getLocation().then(function (response) {
+        currentLocation = { lat: response.coords.latitude, lon: response.coords.longitude };
+        $scope.currentLocationText = response.coords.latitude + ' / ' + response.coords.longitude;
+        $scope.distance = calculateDistance(testLocation.lat, testLocation.lon, currentLocation.lat, currentLocation.lon);
+        console.log(calculateDistance(testLocation.lat, testLocation.lon, currentLocation.lat, currentLocation.lon));
+      });
+    };
   });
 }(angular));
