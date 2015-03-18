@@ -116,6 +116,7 @@
     ]
     var showing = null;
     $scope.map = { center: { latitude: 61.450650, longitude: 23.855030 }, zoom: 16, markers: $scope.points }
+    $scope.myMap = {}
     function onMarkerClicked(marker) {
       if(showing){
         var tohide = _.filter($scope.map.markers,function(x){if(x.id == showing) {return true} return false})[0]
@@ -134,19 +135,19 @@
       };
     });
   }).directive('resize', function ($window) {
-    return function (scope, element, attr) {
+    return function ($scope, element, attr) {
 
         var w = angular.element($window);
-        scope.$watch(function () {
+        $scope.$watch(function () {
             return {
                 'h': window.innerHeight, 
                 'w': window.innerWidth
             };
         }, function (newValue, oldValue) {
-            scope.windowHeight = newValue.h;
-            scope.windowWidth = newValue.w;
-            scope.resizeWithOffset = function (offsetH) {
-                scope.$eval(attr.notifier);
+            $scope.windowHeight = newValue.h;
+            $scope.windowWidth = newValue.w;
+            $scope.resizeWithOffset = function (offsetH) {
+                $scope.$eval(attr.notifier);
                 return { 
                     'height': (newValue.h - offsetH) + 'px'                    
                 };
@@ -155,7 +156,8 @@
         }, true);
 
         w.bind('resize', function () {
-            scope.$apply();
+            $scope.myMap.refresh();
+            $scope.$apply();
         });
     }
 }); 
