@@ -4,14 +4,14 @@
   .config(function ($stateProvider) {
     $stateProvider
     .state('titeenilaarnio.map', {
-      url: 'map',
+      url: 'map/:markerId',
       views: {
         'main@': {
           templateUrl: 'map/map.html'
         }
       }
     })
-  }).controller('MapController', function($scope) {
+  }).controller('MapController', function($scope, $stateParams) {
     $scope.options = { scrollwheel: true }
     $scope.points =
     [{
@@ -117,6 +117,12 @@
     var showing = null;
     $scope.map = { center: { latitude: 61.450650, longitude: 23.855030 }, zoom: 16, markers: $scope.points }
     $scope.myMap = {}
+    $scope.showMarker = function(id) {
+      _.find($scope.map.markers, function(marker) { return marker.id == id }).show = true
+    }
+    if($stateParams.markerId) {
+      $scope.showMarker($stateParams.markerId)
+    }
     function onMarkerClicked(marker) {
       if(showing){
         var tohide = _.filter($scope.map.markers,function(x){if(x.id == showing) {return true} return false})[0]
@@ -134,6 +140,34 @@
         onMarkerClicked(amarker)
       };
     });
+    $scope.youAreHere = function() {
+      navigator.geolocation.getCurrentPosition(function(response) {
+        var oldpos = _.find($scope.map.markers, function(marker){ return marker.id == 'me' })
+        var acc = parseInt(response.coords.accuracy)
+        var lat = response.coords.latitude
+        var lon = response.coords.longitude
+        var you = {
+          id: "me",
+          title: "Olet tässä",
+          text: "Ainakin "+acc+" metrin tarkkuudella...",
+          show: true,
+          coords: {
+            latitude: lat,
+            longitude: lon
+          }
+        }
+        if(oldpos) {
+          oldpos.text = you.text
+          oldpos.show = true
+          oldpos.coords.latitude = lat
+          oldpos.coords.longitude = lon
+        } else {
+          $scope.map.markers.push(you)
+        }
+        $scope.myMap.refresh();
+        $scope.$apply()
+      }, function() { alert('En tiedä!') }, { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 })
+    }
   }).directive('resize', function ($window) {
     return function ($scope, element, attr) {
 
