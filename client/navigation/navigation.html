@@ -57,7 +57,14 @@
       </span>
     </li>
 
-    <li ui-sref="titeenilaarnio.logout" ui-sref-active="active" class="side-navi-link">
+    <li ui-sref="titeenilaarnio.login" ui-sref-active="active" class="side-navi-link" ng-hide="account">
+      <span>Kirjaudu sisään</span>
+      <span class="pull-right side-navi-icon">
+        <i class="fa fa-sign-in"></i>
+      </span>
+    </li>
+
+    <li ui-sref="titeenilaarnio.logout" ui-sref-active="active" class="side-navi-link" ng-show="account">
       <span>Kirjaudu ulos</span>
       <span class="pull-right side-navi-icon">
         <i class="fa fa-sign-out"></i>

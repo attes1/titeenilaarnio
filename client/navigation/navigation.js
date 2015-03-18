@@ -34,7 +34,6 @@
       { name: 'wapice', url: baseUrl + 'wapice.png' },
       { name: 'mfiles', url: baseUrl + 'mfiles.png' },
     ];
-
     
     var x = Math.floor(Math.random() * $scope.logos.length);
     $scope.showLogo = $scope.logos[x];

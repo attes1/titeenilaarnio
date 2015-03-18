@@ -4,6 +4,9 @@ body {
   color: #ffffff;
   text-align: justify;
 }
+a {
+  cursor: pointer;
+}
 .view-header {
   height: 50px;
 }
