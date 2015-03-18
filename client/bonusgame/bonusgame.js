@@ -1,6 +1,6 @@
 (function (angular) {
   'use strict';
-  angular.module('titeenilaarnio.bonusgame', [ 'ui.router', 'geolocation', 'titeenilaarnio.bonusgame' ])
+  angular.module('titeenilaarnio.bonusgame', [ 'ui.router', 'titeenilaarnio.bonusgame' ])
   .config(function ($stateProvider) {
     $stateProvider
     .state('titeenilaarnio.bonusgame', {
@@ -24,7 +24,7 @@
     });
   })
 
-  .controller('BonusGameController', function ($scope, $interval, geolocation) {
+  .controller('BonusGameController', function ($scope, $interval) {
     var toRadians = function (x) {
       return x * Math.PI / 180;
     };
@@ -58,8 +58,7 @@
     var radarTick = function () {
       console.log('tick');
 
-      geolocation.getLocation().then(
-        function (response) {
+      navigator.geolocation.getAccurateCurrentPosition(function (response) {
           var nearest = _.min(locations, function (location) {
             location.distance = calculateDistance(response.coords.latitude, response.coords.longitude, location.lat, location.lon);
             return location.distance;
@@ -78,10 +77,13 @@
 
           console.log(response);
         },
-        function (err, response) {
+        function (response) {
           $scope.level = thresholds.length;
-
           console.log(response);
+        },
+        function() {},
+        {
+          desiredAccuracy: 5, maxWait: 5000
         }
       );
     };
@@ -120,8 +122,8 @@
 
     // For debuging
     $scope.currentLocation = null;
-    geolocation.getLocation().then(function (response) {
+    navigator.geolocation.getAccurateCurrentPosition(function (response) {
       $scope.currentLocation = response.coords.latitude + ' / ' + response.coords.longitude;
-    });
+    }, function(){}, function(){}, { desiredAccuracy: 5, maxWait: 5000 });
   });
 }(angular));
