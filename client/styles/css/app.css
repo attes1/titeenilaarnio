@@ -124,3 +124,10 @@ a {
   height: 32px;
   vertical-align: middle;
 }
+@media (max-width: 549px) {
+  .eventicon {
+    width: auto;
+    float: right;
+    margin-top: -28px;
+  }
+}

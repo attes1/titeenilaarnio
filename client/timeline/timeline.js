@@ -23,7 +23,7 @@
     ];
     $scope.eventsSaturday = [
       { time: '10:30', description: 'Aamupala Teekkarisaunalla', placeId: 'sauna', placeIcon: 'couple54.png'},
-      { time: '11:00', description: 'Ensimmäinen laji Teekkarisaunalla', placeId: 'sauna', placeIcon: 'couple54.png'},
+      { time: '11:00', description: '1. laji Teekkarisaunalla', placeId: 'sauna', placeIcon: 'couple54.png'},
       { time: '13:00', description: '2. laji kisakylässä', placeId: 'kyla', placeIcon: 'skull33.png'},
       { time: '14:30', description: '3. laji kisakylässä', placeId: 'kyla', placeIcon: 'skull33.png'},
       { time: '16:00', description: '4. laji kisakylässä', placeId: 'kyla', placeIcon: 'skull33.png'},

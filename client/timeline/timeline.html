@@ -1,16 +1,16 @@
 <div class="view-header">
     <h3>Aikataulu</h3>
 </div>
-
+<div ng-controller="TimelineController" id="timeline">
 <strong>Perjantai:</strong>
 <div ng-repeat="event in eventsFriday" class="row">
   <div class="one columns">
     {{ event.time }}
   </div>
-  <div class="one columns">
-    <a href="/#/map/{{ event.placeId }}"><img class="eventimg" src="/assets/icons/white/{{ event.placeIcon }}"></a>
+  <div class="one columns eventicon">
+    <a ng-href="/#/map/{{ event.placeId }}"><img class="eventimg" ng-src="/assets/icons/white/{{ event.placeIcon }}"></a>
   </div>
-  <div class="six columns">
+  <div class="ten columns">
     {{ event.description }}
  </div>
 </div>
@@ -20,10 +20,10 @@
   <div class="one columns">
     {{ event.time }}
   </div>
-  <div class="one columns">
-    <a href="/#/map/{{ event.placeId }}"><img class="eventimg" src="/assets/icons/white/{{ event.placeIcon }}"></a>
+  <div class="one columns eventicon">
+    <a ng-href="/#/map/{{ event.placeId }}"><img class="eventimg" ng-src="/assets/icons/white/{{ event.placeIcon }}"></a>
   </div>
-  <div class="six columns">
+  <div class="ten columns">
     {{ event.description }}
   </div>
   <div>
@@ -35,13 +35,13 @@
   <div class="one columns">
     {{ event.time }}
   </div>
-  <div class="one columns">
-    <a href="/#/map/{{ event.placeId }}"><img class="eventimg" src="/assets/icons/white/{{ event.placeIcon }}"></a>
+  <div class="one columns eventicon">
+    <a ng-href="/#/map/{{ event.placeId }}"><img class="eventimg" ng-src="/assets/icons/white/{{ event.placeIcon }}"></a>
   </div>
-  <div class="six columns">
+  <div class="ten columns">
     {{ event.description }}
   </div>
   <div>
   </div>
 </div>
-
+</div>
