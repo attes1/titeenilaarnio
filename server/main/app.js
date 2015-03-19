@@ -4,11 +4,11 @@ var express = require('express');
 var app = express();
 
 var routers = {};
-
-app.use(app.router);
-routes.initialize(app);
-
 var GuildRouter = express.Router();
+
+//app.use(app.router);
+//router.initialize(app);
+
 routers.GuildRouter = GuildRouter;
 
 require('./config.js')(app, express, routers);
