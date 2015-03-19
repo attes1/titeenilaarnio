@@ -1,6 +1,6 @@
 "use strict";
 
-var Note = require('./guild_model.js'),
+var Guild = require('./guild_model.js'),
     Q    = require('q');
 
 module.exports = exports = {
@@ -9,6 +9,7 @@ module.exports = exports = {
     $promise()
       .then(function (guilds) {
         res.json(guilds);
+        console.log(guilds);
       })
        .fail(function (reason) {
         next(reason);
