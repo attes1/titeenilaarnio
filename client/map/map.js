@@ -39,7 +39,7 @@
     {
       id: "majoitus",
       title: "Majoitus",
-      text: "Avoinna: la 00:00 - 11:00 su 00:00 - 11:00<br>Ei ole lepokoti.<br>Päivystys: <a href='tel:0451207348'>045 120 7348</a>, Korkeakoulunkatu 10",
+      text: "Avoinna: la 00:00–11:00 su 00:00–11:00<br>Todellakin on lepokoti.<br>Päivystys: <a href='tel:0451207348'>045 120 7348</a>, Korkeakoulunkatu 10",
       icon: "/assets/icons/bed33.png",
       show: false,
       coords: {
@@ -50,7 +50,7 @@
     {
       id: "edison",
       title: "Juvenes ravintola Edison, Korkeakoulunkatu 6",
-      text: "Avoinna: la 11:00 - 14:00<br><br>Lihapyörykät<br>Kermainen pippurikastike<br>Lohikeitto<br>Feta-kasviskastike<br>Kuitupasta",
+      text: "Avoinna: la 11:00–14:00<br><br>Lihapyörykät<br>Kermainen pippurikastike<br>Lohikeitto<br>Feta-kasviskastike<br>Kuitupasta",
       icon: "/assets/icons/restaurant1.png",
       show: false,
       coords: {
@@ -61,7 +61,7 @@
     {
       id: "kapina",
       title: "Pub Kultainen Apina",
-      text: "Avoinna 12:00 - 03:00<br>Karaoke kello 21:30 alkaen. Insinöörinkatu 30",
+      text: "Avoinna 12:00–03:00<br>Karaoke kello 21:30 alkaen. Insinöörinkatu 30",
       icon: "/assets/icons/beer34.png",
       show: false,
       coords: {
@@ -83,7 +83,7 @@
     {
       id: "duo",
       title: "Kauppa&Keskus Duo",
-      text: "Avoinna: pe 08:00 - 21:00 la 09:00 - 18:00<br>K/S-market, natsisiwa, <strong>ALKO</strong>, subi, kotipizzaburger, kenkäkauppa, hammaslääkäri... Pietilänkatu 2",
+      text: "Avoinna: pe 08:00–21:00 la 09:00–18:00<br>K/S-market, natsisiwa, <strong>ALKO</strong>, subi, kotipizzaburger, kenkäkauppa, hammaslääkäri... Pietilänkatu 2",
       icon: "/assets/icons/marker20.png",
       show: false,
       coords: {
@@ -94,7 +94,7 @@
     {
       id: "siwa",
       title: "Siwa",
-      text: "Avoinna: 08:00 - 23:00, Lindforsinkatu 2",
+      text: "Avoinna: 08:00–23:00, Lindforsinkatu 2",
       icon: "/assets/icons/marker20.png",
       show: false,
       coords: {
@@ -116,7 +116,7 @@
     {
       id: "grilli",
       title: "Herwood Grilli",
-      text: "Avoinna: ~17:00 - ~05:00, Insinöörinkatu 40",
+      text: "Avoinna: ~17:00–~05:00, Insinöörinkatu 40",
       icon: "/assets/icons/fastfood1.png",
       show: false,
       coords: {
@@ -127,7 +127,7 @@
     {
       id: "sauna",
       title: "Teekkarisauna",
-      text: "Ei todellakaan ole lepokoti! Tekniikankatu 11",
+      text: "Avoinna: 18:00–04:00. Ei todellakaan ole lepokoti! Tekniikankatu 11",
       icon: "/assets/icons/couple54.png",
       show: false,
       coords: {
