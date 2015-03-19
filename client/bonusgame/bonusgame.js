@@ -4,7 +4,7 @@
   .config(function ($stateProvider) {
     $stateProvider
     .state('titeenilaarnio.bonusgame', {
-      url: 'bonusgame',
+      url: 'bonusgame/:code',
       views: {
         'main@': {
           templateUrl: 'bonusgame/bonusgame.html',
@@ -24,7 +24,18 @@
     });
   })
 
-  .controller('BonusGameController', function ($scope, $interval) {
+  .controller('BonusGameController', function ($scope, $stateParams, $interval) {
+    $scope.code = undefined;
+
+    $scope.radarOn = false;
+    $scope.entryCode = false;
+
+    if ($stateParams.code) {
+      $scope.code = $stateParams.code;
+      $scope.codeEntry = true;
+      $scope.radarOn = false;
+    }
+
     var toRadians = function (x) {
       return x * Math.PI / 180;
     };
@@ -48,10 +59,6 @@
 
     // Joo, nää kovakoodattiin nyt tähä, kun ei näitä voi servultakaan pollata koko ajan
     // ja ei jaksettu tehdä elegantimpaa ratkasua. Jos jaksoit tänne asti ni käytä hyväkses.
-    //
-    // ps. Muita "exploiteja" ei ole, transaktiolukot ja muut on bäkkärille tehty.
-    //
-    // pps. Tietysti tehtiin :DDD
 
     var locations = [
       { lat: 61.44858871, lon: 23.85798343 },
@@ -61,14 +68,19 @@
       { lat: 61.44979, lon: 23.85749 }
     ];
 
-    var thresholds = [ 2, 5, 10, 15, 20, 25 ];
+    var thresholds = [ 5, 10, 20, 30, 40 ];
+
+    $scope.level = thresholds.length - 1;
+    $scope.accuracy = '?';
 
     var radar = undefined;
 
     var radarTick = function () {
-      console.log('tick');
-
       navigator.geolocation.getAccurateCurrentPosition(function (response) {
+          $scope.accuracy = response.coords.accuracy;
+
+          console.log(response);
+
           var nearest = _.min(locations, function (location) {
             location.distance = calculateDistance(response.coords.latitude, response.coords.longitude, location.lat, location.lon);
             return location.distance;
@@ -79,19 +91,16 @@
           });
 
           if (i < 0) {
-            $scope.level = thresholds.length;
+            $scope.level = thresholds.length - 1;
           }
           else {
             $scope.level = i;
           }
-
-          console.log(response);
         },
-        function (response) {
-          $scope.level = thresholds.length;
-          console.log(response);
+        function (err) {
+          console.log(err);
         },
-        function() {},
+        function () {},
         {
           desiredAccuracy: 5, maxWait: 5000
         }
@@ -99,13 +108,9 @@
     };
 
     var startRadar = function () {
-      console.log('foo');
-
       if (angular.isDefined(radar)) {
         return;
       }
-
-      console.log('radar started');
 
       radar = $interval(radarTick, 1000);
     };
@@ -117,12 +122,9 @@
       }
     };
 
-    $scope.radarOn = false;
-    $scope.entryCode = false;
-
     $scope.toggleRadar = function () {
+      $scope.codeEntry = false;
       $scope.radarOn = !$scope.radarOn;
-      $scope.entryCode = false;
 
       if ($scope.radarOn) {
         startRadar();
@@ -134,7 +136,7 @@
 
     $scope.toggleCodeEntry = function () {
       $scope.radarOn = false;
-      $scope.entryCode = !$scope.entryCode;
+      $scope.codeEntry = !$scope.codeEntry;
     };
 
     // For debuging

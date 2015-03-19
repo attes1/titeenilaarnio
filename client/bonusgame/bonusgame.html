@@ -16,15 +16,23 @@
 
 <hr class="small" />
 
-<div class="row" ng-show="radarOn"> 
+<p ng-show="!radarOn && !codeEntry">
+  Käytä tutkaa löytääksesi Vincit-kamaa kampukselta tai muista Titeenien Taistojen tapahtumapaikoista. Syötä koodi tai skannaa QR ja tienaa killallesi tärkeitä pisteitä. "Tutkan" värin pitäisi indikoida jollain tarkkuudella, onko jossain lähettyvillä piilo.
+</p>
+
+<div class="row" ng-show="radarOn && !codeEntry"> 
   <div id="radar" class="columns twelve">
-    <div class="radar-indicator"></div>
+    <div class="radar-indicator {{ 'level-' + level }}" ng-class=""></div>
   </div>
+
+  <p class="pull-right">
+    Tarkkuus: {{ accuracy }}
+  </p>
 </div>
 
-<div class="row" ng-show="!radarOn && entryCode">
+<div class="row" ng-show="!radarOn && codeEntry">
   <div class="eight columns" id="code-entry">
-    <input class="u-full-width" type="text" placeholder="Koodi" />
+    <input class="u-full-width" ng-model="code" type="text" placeholder="Koodi" />
   </div>
 
   <div class="four columns">

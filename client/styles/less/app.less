@@ -37,10 +37,8 @@ a {
     }
   }
 
-  form {
-    input {
-      color: @navigation-background;
-    }
+  input {
+    color: @navigation-background;
   }
 }
 
@@ -58,6 +56,10 @@ a {
       padding-bottom: 5px;
     }
   }
+}
+
+.text-center {
+  text-align: center;
 }
 
 @circular-logo-size:    100px;
@@ -119,18 +121,24 @@ a {
   .radar-indicator {
     width: @radar-indicator-size;
     height: @radar-indicator-size;
+    margin-left: auto;
+    margin-right: auto;
 
     border-radius: @radar-indicator-size / 2;
     -webkit-border-radius: @radar-indicator-size / 2;
     -moz-border-radius: @radar-indicator-size / 2;
 
-    background-color: #000000;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
 
-    &.level-0 { background-color: #FF160F; }
-    &.level-1 { background-color: #FF4D04; }
-    &.level-2 { background-color: #C9C4C9; }
-    &.level-3 { background-color: #5396BA; }
-    &.level-4 { background-color: #1717FF; }
+    &.level-0 { background-color: #FF160F; border: 10px solid darken(#FF160F, 20%); }
+    &.level-1 { background-color: #FF4D04; border: 10px solid darken(#FF4D04, 20%); }
+    &.level-2 { background-color: #C9C4C9; border: 10px solid darken(#C9C4C9, 20%); }
+    &.level-3 { background-color: #5396BA; border: 10px solid darken(#5396BA, 20%); }
+    &.level-4 { background-color: #1717FF; border: 10px solid darken(#1717FF, 20%); }
   }
 }
 

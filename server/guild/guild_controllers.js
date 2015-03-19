@@ -1,6 +1,6 @@
 "use strict";
 
-var Note = require('./note_model.js'),
+var Note = require('./guild_model.js'),
     Q    = require('q');
 
 module.exports = exports = {

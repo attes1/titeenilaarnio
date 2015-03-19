@@ -8,6 +8,6 @@ routers.NoteRouter = NoteRouter;
 
 require('./config.js')(app, express, routers);
 
-require('../note/note_routes.js')(NoteRouter);
+require('../guild/guild_routes.js')(NoteRouter);
 
 module.exports = exports = app;

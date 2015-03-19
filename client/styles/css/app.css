@@ -28,7 +28,7 @@ a {
   margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
-.content form input {
+.content input {
   color: #191919;
 }
 .footer {
@@ -41,6 +41,9 @@ a {
   height: 50px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+.text-center {
+  text-align: center;
 }
 .circular-logo {
   width: 100px;
@@ -100,25 +103,36 @@ a {
 #radar .radar-indicator {
   width: 30rem;
   height: 30rem;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 15rem;
   -webkit-border-radius: 15rem;
   -moz-border-radius: 15rem;
-  background-color: #000000;
+  -webkit-transition: background-color 1000ms linear;
+  -moz-transition: background-color 1000ms linear;
+  -o-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
 }
 #radar .radar-indicator.level-0 {
   background-color: #FF160F;
+  border: 10px solid #a80500;
 }
 #radar .radar-indicator.level-1 {
   background-color: #FF4D04;
+  border: 10px solid #9d2e00;
 }
 #radar .radar-indicator.level-2 {
   background-color: #C9C4C9;
+  border: 10px solid #988f98;
 }
 #radar .radar-indicator.level-3 {
   background-color: #5396BA;
+  border: 10px solid #305e77;
 }
 #radar .radar-indicator.level-4 {
   background-color: #1717FF;
+  border: 10px solid #0000b0;
 }
 .eventimg {
   height: 32px;

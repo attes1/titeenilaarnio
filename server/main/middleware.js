@@ -18,6 +18,7 @@ module.exports = exports = {
       res.send(err, 500);
     }
   },
+
   cors: function (req, res, next) {
     res.header('Access-Controll-Allow-Origin', '*');
     res.header('Access-Controll-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
