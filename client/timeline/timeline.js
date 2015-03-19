@@ -27,7 +27,7 @@
       { time: '13:00', description: '2. laji kisakylässä', placeId: 'kyla', placeIcon: 'skull33.png'},
       { time: '14:30', description: '3. laji kisakylässä', placeId: 'kyla', placeIcon: 'skull33.png'},
       { time: '16:00', description: '4. laji kisakylässä', placeId: 'kyla', placeIcon: 'skull33.png'},
-      { time: '18:15', description: '5. laji kisakylässä', placeId: 'kyla', placeIcon: 'skull33.png'},
+      { time: '18:00', description: 'Robocode Cinolassa', placeId: 'cinola', placeIcon: 'mustache13.png'},
       { time: '19:00', description: 'Herwantapeli Cinolassa', placeId: 'cinola', placeIcon: 'mustache13.png'},
       { time: '20:30', description: 'Voitonjuhlat Teekkarisaunalla', placeId: 'sauna', placeIcon: 'couple54.png'}
     ];
