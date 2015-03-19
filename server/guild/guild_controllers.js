@@ -5,16 +5,16 @@ var Note = require('./guild_model.js'),
 
 module.exports = exports = {
   get: function (req, res, next) {
-    var $promise = Q.nbind(Note.find, Note);
+    var $promise = Q.nbind(Guild.find, Guild);
     $promise()
-      .then(function (notes) {
-        res.json(notes);
+      .then(function (guilds) {
+        res.json(guilds);
       })
        .fail(function (reason) {
         next(reason);
       });
   },
-
+/*
   post: function (req, res, next) {
     var note = req.body.note;
     var $promise = Q.nbind(Note.create, Note);
@@ -26,4 +26,5 @@ module.exports = exports = {
         next(reason);
       });
   }
+  */
 };

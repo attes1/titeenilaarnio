@@ -2,12 +2,17 @@
 
 var express = require('express');
 var app = express();
+
 var routers = {};
-var NoteRouter = express.Router();
-routers.NoteRouter = NoteRouter;
+
+app.use(app.router);
+routes.initialize(app);
+
+var GuildRouter = express.Router();
+routers.GuildRouter = GuildRouter;
 
 require('./config.js')(app, express, routers);
 
-require('../guild/guild_routes.js')(NoteRouter);
+require('../guild/guild_routes.js')(GuildRouter);
 
 module.exports = exports = app;
