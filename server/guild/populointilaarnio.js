@@ -3,7 +3,7 @@
 
 var mongoose = require('mongoose');
 var guildmodel = require('./guild_model.js');
-1
+
 var Guild = mongoose.model('guilds');
 
 var db = mongoose.connect('mongodb://localhost/titeenilaarnio');
