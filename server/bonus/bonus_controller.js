@@ -38,6 +38,7 @@ module.exports = exports =
           console.log('ebin');
           res.send('k');
         })
+
         .fail(function (reason)
           {
             console.log('HOMO4');
@@ -47,6 +48,10 @@ module.exports = exports =
           }
         );
       }
+      else
+          {
+            res.send('HOMO');
+          };
     })
     .fail(function (reason) 
     {
