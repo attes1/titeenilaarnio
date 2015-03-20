@@ -2,8 +2,7 @@
 
 var controller = require('./bonus_controller.js');
 
-module.exports = exports = function (router) 
-{
+module.exports = exports = function (router) {
   router.route('/')
-    .get(controller.get);
+    .post(controller.post);
 };
