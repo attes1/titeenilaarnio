@@ -8,6 +8,8 @@ module.exports = exports =
 {
   post: function (req, res, guild, Qcode, next) 
   {
+    console.log('jee');
+    
     var fetch = Q.when(Bonus.findOne({ QRcode: Qcode }).exec());
     fetch.then(function (code) 
     {
