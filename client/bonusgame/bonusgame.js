@@ -29,6 +29,7 @@
 
     $scope.radarOn = false;
     $scope.entryCode = false;
+    $scope.selectedGuild = '';
 
     if ($stateParams.code) {
       $scope.code = $stateParams.code;
@@ -138,6 +139,11 @@
       $scope.radarOn = false;
       $scope.codeEntry = !$scope.codeEntry;
     };
+
+    $scope.setGuild = function(guild) {
+      $scope.selectedGuild = guild;
+      $scope.$apply();
+    }
 
     // For debuging
     $scope.currentLocation = null;
