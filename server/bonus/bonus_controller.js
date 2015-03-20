@@ -2,7 +2,7 @@
 
 var Bonus = require('./bonus_model.js');
 var Q = require('q');
-var Guilds = require('../guild/guild_model.js');
+var guilds = require('../guild/guild_model.js');
 //next, guild, Qcode
 module.exports = exports = 
 {
@@ -33,8 +33,8 @@ module.exports = exports =
           console.log('derp');
           console.log()
           console.log('HOMO3');
-          aquirer.update({ $push: { scores: { score: 0.5 , competition: 'bonus', bonusCode: QRcode }}}).exec();
-          
+          aquirer.update({ $push: { scores: { score: 0.5 , competition: 'bonus', bonusCode: Qcode }}}).exec();
+          console.log(aquirer);
           console.log('ebin');
           res.send('k');
         })
