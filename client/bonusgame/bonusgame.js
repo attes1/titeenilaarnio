@@ -143,7 +143,6 @@
 
     $scope.setGuild = function (guild) {
       $scope.selectedGuild = guild;
-      $scope.$apply();
     };
 
     $scope.codeValid = false;
