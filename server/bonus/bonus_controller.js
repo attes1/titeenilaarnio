@@ -64,7 +64,7 @@ module.exports = exports =
     .fail(function (reason) 
     {
 console.log('HOMO5');
-        res.send(400)
+        res.send('Koistinen')
         console.log(reason);
 //      next(reason);
     }).done();
