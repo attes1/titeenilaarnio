@@ -18,6 +18,7 @@ module.exports = exports = function (app, express, routers) {
   app.use(middle.cors);
   app.use(express.static(__dirname + '/../../client'));
   app.use('/api/guilds', routers.GuildRouter);
+  app.use('/api/bonus', routers.BonusRouter);
   app.use(middle.logError);
   app.use(middle.handleError);
 };

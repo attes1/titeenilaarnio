@@ -16,7 +16,8 @@ var GuildSchema = new mongoose.Schema({
   
   scores: [
     {
-      score: Number,
+      timeStamp : { type : Date, default: Date.now },
+      score: Number,  
       competition: {
         type: String,
         enum: competitions
