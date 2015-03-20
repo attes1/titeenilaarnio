@@ -14,33 +14,32 @@ var db = mongoose.connect('mongodb://localhost/titeenilaarnio');
 
 var tik = new Guild({
 	shortName: 'tik',
-	fullName: 'Tietokilta'
-	
+	fullName: 'Tietokilta ry'
 });
 
 var tite = new Guild({
 	shortName: 'tite',
-	fullName: 'Tampereen Tietoteekkarikilta'
+	fullName: 'Tampereen TietoTeekkarikilta'
 	
 });
 
 var otit = new Guild({
 	shortName: 'otit',
-	fullName: 'Oulun Tietoteekkarit'
+	fullName: 'Oulun Tietoteekkarit ry'
 	//scores: basescores,
 	
 });
 
 var cluster = new Guild({
 	shortName: 'cluster',
-	fullName: 'Cluster Ry'
+	fullName: 'Cluster ry'
 	//scores: basescores,
 	
 });
 
 var digit = new Guild({
 	shortName: 'digit',
-	fullName: 'Digit Ry'
+	fullName: 'Digit ry'
 	//scores: basescores,
 	
 });

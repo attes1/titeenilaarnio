@@ -24,7 +24,7 @@
     });
   })
 
-  .controller('BonusGameController', function ($scope, $stateParams, $interval) {
+  .controller('BonusGameController', function ($scope, $stateParams, $interval, $http) {
     $scope.code = undefined;
 
     $scope.radarOn = false;
@@ -150,7 +150,7 @@
     $scope.checkCode = function () {
       $http.post('/api/bonus', {
         guild: $scope.selectedGuild,
-        qrcode: code
+        qrcode: $scope.code
       }).success(function (response) {
         $scope.codeValid = true;
       });
