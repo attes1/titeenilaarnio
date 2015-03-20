@@ -141,10 +141,20 @@
       $scope.codeEntry = !$scope.codeEntry;
     };
 
-    $scope.setGuild = function(guild) {
+    $scope.setGuild = function (guild) {
       $scope.selectedGuild = guild;
       $scope.$apply();
-    }
+    };
 
+    $scope.codeValid = false;
+
+    $scope.checkCode = function () {
+      $http.post('/api/bonus', {
+        guild: $scope.selectedGuild,
+        qrcode: code
+      }).success(function (response) {
+        $scope.codeValid = true;
+      });
+    };
   });
 }(angular));
