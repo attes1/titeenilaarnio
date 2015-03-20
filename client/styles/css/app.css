@@ -134,6 +134,10 @@ a {
   background-color: #1717FF;
   border: 10px solid #0000b0;
 }
+.scoreboard .guild {
+  line-height: 5rem;
+  padding-bottom: 2rem;
+}
 .eventimg {
   height: 32px;
   vertical-align: middle;
