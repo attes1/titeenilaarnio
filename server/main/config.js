@@ -28,7 +28,14 @@ module.exports = exports = function (app, express, routers) {
 
   app.route('/api/guilds').get(guild.get);
 
-  app.route('/api/bonus').post(bonus.post);
+ // app.route('/api/bonus').get(function (req, res){
+ //  res.send('guilds')}).post()
+
+//app.post('/api/bonus', function (req, res) {res.send('POST request to the homepage')});
+
+app.post('/api/bonus', bonus.post);
+
+  //.post(bonus.post);
 
 //  app.use('/api/guilds', routers.Router);
 //  app.use('/api/bonus', routers.Router);
