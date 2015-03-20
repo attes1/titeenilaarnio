@@ -2,14 +2,19 @@
 "use strict";
 
 var mongoose = require('mongoose');
-var guildmodel = require('./guild_model.js');
-var codemodel = require('../bonus/bonus_model.js');
+var guildmodel = require('./server/guild/guild_model.js');
+var codemodel = require('./server/bonus/bonus_model.js');
+var Q = require('q');
 
 var Guild = mongoose.model('guilds');
 var Code = mongoose.model('bonuscodes');
 
 var db = mongoose.connect('mongodb://localhost/titeenilaarnio');
 
+var ebin = Q.when( console.log('-== Populointilaarnio ==-') )
+.then( function()
+{
+	console.log('');
 //killat
 
 var tik = new Guild({
@@ -46,27 +51,27 @@ var digit = new Guild({
 
 tik.save(function (err) {
 	if (err) throw err;
-	console.log("tik")
+//	console.log("tik")
 });
 
 tite.save(function (err) {
 	if (err) throw err;
-	console.log("tite")
+//	console.log("tite")
 });
 
 digit.save(function (err) {
 	if (err) throw err;
-	console.log("digit")
+//	console.log("digit")
 });
 
 cluster.save(function (err) {
 	if (err) throw err;
-	console.log("cluster")
+//	console.log("cluster")
 });
 
 otit.save(function (err) {
 	if (err) throw err;
-	console.log("otit")
+//	console.log("otit")
 });
 
 //koodit
@@ -82,38 +87,49 @@ var koodi9 = new Code({ qrCode: 'YQ0IZA=='});
 var koodi2 = new Code({ qrCode: 'ZLAIOg=='});
 koodi1.save(function (err) {
 	if (err) throw err;
-	console.log("koodi1")
+//	console.log("koodi1")
 });
 
 koodi2.save(function (err) {
 	if (err) throw err;
-	console.log("koodi2")
+//	console.log("koodi2")
 });
 koodi3.save(function (err) {
 	if (err) throw err;
-	console.log("koodi3")
+//	console.log("koodi3")
 });
 koodi4.save(function (err) {
 	if (err) throw err;
-	console.log("koodi4")
+//	console.log("koodi4")
 });
 koodi5.save(function (err) {
 	if (err) throw err;
-	console.log("koodi5")
+//	console.log("koodi5")
 });
 koodi6.save(function (err) {
 	if (err) throw err;
-	console.log("koodi6")
+//	console.log("koodi6")
 });
 koodi7.save(function (err) {
 	if (err) throw err;
-	console.log("koodi7")
+//	console.log("koodi7")
 });
 koodi9.save(function (err) {
 	if (err) throw err;
-	console.log("koodi8")
+//	console.log("koodi8")
 });
 koodi8.save(function (err) {
 	if (err) throw err;
-	console.log("koodi8")
+
+});
+
+})
+//.fail(function(err){console.log(err)})
+.then(function()
+{	
+console.log('Tietokannat valmiina, ainakin toivottavasti');
+	setTimeout(function() {
+  process.exit(1);
+}, 1000);
+	;
 });
