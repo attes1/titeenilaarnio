@@ -2,7 +2,7 @@
 
 var Bonus = require('./bonus_model.js');
 var Q = require('q');
-//var Guilds = require('../guild/guild_model.js');
+var Guilds = require('../guild/guild_model.js');
 //next, guild, Qcode
 module.exports = exports = 
 {
@@ -51,7 +51,7 @@ module.exports = exports =
     .fail(function (reason) 
     {
 console.log('HOMO5');
-        res.send(reason);
+        res.send(400)
         console.log(reason);
 //      next(reason);
     });
