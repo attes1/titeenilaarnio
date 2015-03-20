@@ -138,11 +138,5 @@
       $scope.radarOn = false;
       $scope.codeEntry = !$scope.codeEntry;
     };
-
-    // For debuging
-    $scope.currentLocation = null;
-    navigator.geolocation.getAccurateCurrentPosition(function (response) {
-      $scope.currentLocation = response.coords.latitude + ' / ' + response.coords.longitude;
-    }, function(){}, function(){}, { desiredAccuracy: 5, maxWait: 5000 });
   });
 }(angular));
