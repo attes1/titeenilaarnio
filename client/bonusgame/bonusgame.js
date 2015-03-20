@@ -27,7 +27,7 @@
   .controller('BonusGameController', function ($scope, $stateParams, $interval, $http) {
     $scope.code = undefined;
 
-    $scope.codeValid = false;
+    $scope.msg = '';
     $scope.radarOn = false;
     $scope.entryCode = false;
     $scope.selectedGuild = '';
@@ -126,7 +126,6 @@
     };
 
     $scope.toggleRadar = function () {
-      $scope.codeValid = false;
       $scope.codeEntry = false;
       $scope.radarOn = !$scope.radarOn;
 
@@ -139,7 +138,6 @@
     };
 
     $scope.toggleCodeEntry = function () {
-      $scope.codeValid = false;      
       $scope.radarOn = false;
       $scope.codeEntry = !$scope.codeEntry;
     };
@@ -148,14 +146,18 @@
       $scope.selectedGuild = guild;
     };
 
-    $scope.codeValid = false;
-
     $scope.checkCode = function () {
       $http.post('/api/bonus', {
         guild: $scope.selectedGuild,
         qrcode: $scope.code
       }).success(function (response) {
-        $scope.codeValid = true;
+        if(response == 'k') {
+          $scope.msg = 'Onnittelut! Tienasit killallesi pisteitä ja löysit itsellesi tärkeää ja hyödyllistä Vincit-palkintomateriaalia. Seuraavaa kohdetta etsimään :D:D';
+        } else if(response == 'Koistinen') {
+          $scope.msg = 'En ymmärrä t: muumi';
+        } else {
+          $scope.msg = 'Hienosti löydetty! Mutta tämä koodi on valitettavasti käytetty jo. :(';
+        }
       });
     };
   });
