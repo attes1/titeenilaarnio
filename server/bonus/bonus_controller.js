@@ -33,20 +33,28 @@ module.exports = exports =
           console.log('derp');
           console.log()
           console.log('HOMO3');
-          aquirer.update({ $push: { scores: { score: 0.5 , competition: 'bonus', bonusCode: Qcode }}}).exec();
-          console.log(aquirer);
+          var koita = Q.when(aquirer.update({ $push: { scores: { score: 2 , competition: 'bonus', bonusCode: Qcode } } } ).exec() );
+          koita.then(function (juuh)
+          {
+            console.log('jeeeeeeeeeeeee');
+            console.log(juuh);
+          })
+          .fail( function (err)
+          {
+            console.log(err);
+            console.log('PERKELE');
+          }).done();
+         // console.log(aquirer);
           console.log('ebin');
           res.send('k');
-        })
-
-        .fail(function (reason)
+        }).fail(function (reason)
           {
             console.log('HOMO4');
             console.log(reason);
             res.send(reason);
 
           }
-        );
+        ).done();
       }
       else
           {
@@ -59,7 +67,7 @@ console.log('HOMO5');
         res.send(400)
         console.log(reason);
 //      next(reason);
-    });
+    }).done();
     
   }
 };

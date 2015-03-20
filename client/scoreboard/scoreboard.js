@@ -21,14 +21,14 @@
       .success(function (response) {
         $scope.guilds = response;
         _.forEach($scope.guilds, function (g) {
-          g.total = 0;
-          g.total = _.reduce(g.scores, function (sum, value, key) {
-            if (key === 'score') {
-              sum = sum + value;
-            }
+          var robin = _.pluck(g.scores, 'score');
+          g.total = _.reduce(robin, function (sum, n) {
+            return sum + n;
+          });
 
-            return sum;
-          }, 0);
+          if (!g.total) {
+            g.total = 0;
+          }
         });
     });
   });
