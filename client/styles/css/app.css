@@ -149,14 +149,13 @@ a {
     margin-top: -28px;
   }
 }
-
 #setguild {
   width: 100%;
   white-space: nowrap;
 }
 .bonuslogo {
   background-position: 50% 50%!important;
-  display: inline-block!important;
+  display: inline-block !important;
   width: 19.5%!important;
   height: 8rem!important;
 }
