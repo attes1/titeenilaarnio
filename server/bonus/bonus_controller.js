@@ -10,13 +10,13 @@ module.exports = exports =
   {
     console.log('HOMO');
     //res.send('HOMO');
-    
-    var Qcode = req.qrcode;
+    console.log('kikkeli');
+    var Qcode = req.body.qrcode;
     console.log(Qcode);
 
-    var guild = req.guild;
+    var guild = req.body.guild;
     console.log(guild);
-    
+
     var fetch = Q.when(Bonus.findOne({ qrCode: Qcode }).exec());
     fetch.then(function (code) 
     {
