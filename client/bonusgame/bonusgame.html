@@ -3,13 +3,11 @@
 </div>
 
 <div class="row">
-  <div class="six columns">
+  <div class="twelve columns">
     <button class="button-primary" ng-click="toggleRadar()">
       Tutka <span ng-hide="radarOn">päälle</span><span ng-show="radarOn">pois</span>
     </button>
-  </div>
 
-  <div class="six columns">
     <button class="button-primary pull-right" ng-click="toggleCodeEntry()">Syötä koodi</button>
   </div>
 </div>
@@ -28,6 +26,14 @@
   <p class="pull-right">
     Tarkkuus: {{ accuracy }}
   </p>
+</div>
+<div id="setguild" ng-show="!radarOn && codeEntry">
+  <p>Valitse kilta, syötä koodi ja klikkaa tarkasta.</p>
+  <div ng-click="setGuild('tite')" class="circular-logo tite small ng-scope bonuslogo {{(selectedGuild == 'tite') ? 'active' : ''}}"></div>
+  <div ng-click="setGuild('digit')" class="circular-logo digit small ng-scope bonuslogo {{(selectedGuild == 'digit') ? 'active' : ''}}"></div>
+  <div ng-click="setGuild('cluster')" class="circular-logo cluster small ng-scope bonuslogo {{(selectedGuild == 'cluster') ? 'active' : ''}}"></div>
+  <div ng-click="setGuild('otit')" class="circular-logo otit small ng-scope bonuslogo {{(selectedGuild == 'otit') ? 'active' : ''}}"></div>
+  <div ng-click="setGuild('tik')" class="circular-logo tik small ng-scope bonuslogo {{(selectedGuild == 'tik') ? 'active' : ''}}"></div></main>
 </div>
 
 <div class="row" ng-show="!radarOn && codeEntry">

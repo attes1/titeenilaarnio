@@ -134,6 +134,10 @@ a {
   background-color: #1717FF;
   border: 10px solid #0000b0;
 }
+.scoreboard .guild {
+  line-height: 5rem;
+  padding-bottom: 2rem;
+}
 .eventimg {
   height: 32px;
   vertical-align: middle;
@@ -144,4 +148,19 @@ a {
     float: right;
     margin-top: -28px;
   }
+}
+#setguild {
+  width: 100%;
+  white-space: nowrap;
+}
+.bonuslogo {
+  background-position: 50% 50%!important;
+  display: inline-block!important;
+  width: 20%!important;
+  height: 8rem!important;
+}
+.bonuslogo.active {
+  background-size: 8rem 8rem;
+  background-color: rgba(51, 195, 240, 0.5);
+  border-radius: 10px;
 }

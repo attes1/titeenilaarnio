@@ -29,6 +29,7 @@
 
     $scope.radarOn = false;
     $scope.entryCode = false;
+    $scope.selectedGuild = '';
 
     if ($stateParams.code) {
       $scope.code = $stateParams.code;
@@ -139,10 +140,10 @@
       $scope.codeEntry = !$scope.codeEntry;
     };
 
-    // For debuging
-    $scope.currentLocation = null;
-    navigator.geolocation.getAccurateCurrentPosition(function (response) {
-      $scope.currentLocation = response.coords.latitude + ' / ' + response.coords.longitude;
-    }, function(){}, function(){}, { desiredAccuracy: 5, maxWait: 5000 });
+    $scope.setGuild = function(guild) {
+      $scope.selectedGuild = guild;
+      $scope.$apply();
+    }
+
   });
 }(angular));
