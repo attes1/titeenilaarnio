@@ -27,7 +27,7 @@
     Tarkkuus: {{ accuracy }}
   </p>
 </div>
-<div id="setguild" ng-show="!radarOn tcodeEntry">
+<div id="setguild" ng-show="!radarOn && codeEntry">
   <p>Valitse kilta, syötä koodi ja klikkaa tarkasta.</p>
   <div ng-click="setGuild('tite')" class="circular-logo tite small ng-scope bonuslogo {{(selectedGuild == 'tite') ? 'active' : ''}}"></div>
   <div ng-click="setGuild('digit')" class="circular-logo digit small ng-scope bonuslogo {{(selectedGuild == 'digit') ? 'active' : ''}}"></div>

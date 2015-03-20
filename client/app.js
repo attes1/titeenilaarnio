@@ -24,7 +24,12 @@
     });
 
     $urlRouterProvider.otherwise('/main');
-  });
+  })
+
+  .run(function ($rootScope, $state) {
+    $rootScope.$on('$stateChangeSuccess', function () {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  })})
 }(angular));
 
 
