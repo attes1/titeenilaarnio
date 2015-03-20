@@ -33,7 +33,7 @@ module.exports = exports =
           console.log('derp');
           console.log()
           console.log('HOMO3');
-          var koita = Q.when(aquirer.update({ $push: { scores: { score: 2 , competition: 'bonus', bonusCode: Qcode } } } ).exec() );
+          var koita = Q.when(aquirer.update({ $push: { scores: { score: 0.5 , competition: 'bonus', bonusCode: Qcode } } } ).exec() );
           koita.then(function (juuh)
           {
             console.log('jeeeeeeeeeeeee');
