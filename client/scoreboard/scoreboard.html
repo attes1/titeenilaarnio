@@ -3,7 +3,7 @@
 </div>
 
 <div class="scoreboard">
-  <div class="row guild" ng-repeat="guild in guilds | orderBy:'total'">
+  <div class="row guild" ng-repeat="guild in guilds | orderBy:'-total'">
     <div class="two columns">
       <div class="circular-logo small {{ guild.shortName}}"></div>
     </div>
