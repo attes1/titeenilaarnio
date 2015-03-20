@@ -42,6 +42,6 @@
   </div>
 
   <div class="four columns">
-    <input class="button-primary pull-right" type="button" ng-click="checkCode()" value="Tarkasta" /> 
+    <input class="button-primary pull-right" type="button" ng-click="checkCode()" ng-disabled="selectedGuild.length < 1 || code.length < 1" value="Tarkasta" /> 
   </div>
 </div>
