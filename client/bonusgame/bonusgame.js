@@ -62,11 +62,12 @@
     // ja ei jaksettu tehdä elegantimpaa ratkasua. Jos jaksoit tänne asti ni käytä hyväkses.
 
     var locations = [
-      { lat: 61.44858871, lon: 23.85798343 },
-      { lat: 61.4483938, lon: 23.8578118 },
-      { lat: 61.44834009, lon: 23.8577371 },
-      { lat: 61.4483013, lon: 23.85780036 },
-      { lat: 61.44979, lon: 23.85749 }
+      { lat: 61.45031, lon: 23.86433 },
+      { lat: 61.45088, lon: 23.86195 },
+      { lat: 61.4509043, lon: 23.8593568 },
+      { lat: 61.45108, lon: 23.85548 },
+      { lat: 61.45224, lon: 23.860496 },
+      { lat: 61.450314, lon: 23.864860 }
     ];
 
     var thresholds = [ 5, 10, 20, 30, 40 ];
