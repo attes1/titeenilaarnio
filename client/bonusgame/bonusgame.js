@@ -27,6 +27,7 @@
   .controller('BonusGameController', function ($scope, $stateParams, $interval, $http) {
     $scope.code = undefined;
 
+    $scope.codeValid = false;
     $scope.radarOn = false;
     $scope.entryCode = false;
     $scope.selectedGuild = '';
@@ -125,6 +126,7 @@
     };
 
     $scope.toggleRadar = function () {
+      $scope.codeValid = false;
       $scope.codeEntry = false;
       $scope.radarOn = !$scope.radarOn;
 
@@ -137,6 +139,7 @@
     };
 
     $scope.toggleCodeEntry = function () {
+      $scope.codeValid = false;      
       $scope.radarOn = false;
       $scope.codeEntry = !$scope.codeEntry;
     };
