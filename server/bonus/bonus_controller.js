@@ -26,7 +26,7 @@ module.exports = exports =
       if(code.checked == false)
       {
         console.log('HOMO2');
-        code.update( { checked: true } );
+        code.update( { checked: true } ).exec();
         var aquire = Q.when(guilds.findOne({shortName: guild}).exec());
         aquire.then(function (aquirer)
         {
